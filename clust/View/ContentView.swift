@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    let globalStyle = GlobalStyle()
+    
     var body: some View {
         NavigationStack {
-            StartScreenView()
+            StartScreenView(globalStyle: globalStyle).allScreensStyle()
         }
-        .padding(16)
+    }
+}
+
+extension View {
+    func allScreensStyle() -> some View {
+        self.background(.white)
+            .padding(16)
     }
 }
 

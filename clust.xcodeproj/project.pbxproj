@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		932FA94129C40925004E28AC /* StartScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932FA94029C40925004E28AC /* StartScreenView.swift */; };
 		932FA94629C41049004E28AC /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932FA94529C41049004E28AC /* LoginModel.swift */; };
+		932FA94A29C568CD004E28AC /* ProfileSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932FA94929C568CD004E28AC /* ProfileSelectorView.swift */; };
+		932FA94C29C56E95004E28AC /* GlobalStyleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932FA94B29C56E95004E28AC /* GlobalStyleModel.swift */; };
+		932FA94E29C584B7004E28AC /* ButtonUserTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932FA94D29C584B7004E28AC /* ButtonUserTypeView.swift */; };
+		932FA95229C58E0F004E28AC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932FA95129C58E0F004E28AC /* UserModel.swift */; };
 		937DD64829C3FF860042BC4B /* clustApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937DD64729C3FF860042BC4B /* clustApp.swift */; };
 		937DD64A29C3FF860042BC4B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937DD64929C3FF860042BC4B /* ContentView.swift */; };
 		937DD64C29C3FF880042BC4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 937DD64B29C3FF880042BC4B /* Assets.xcassets */; };
@@ -20,6 +24,10 @@
 		932FA94529C41049004E28AC /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		932FA94729C4190F004E28AC /* clust.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = clust.entitlements; sourceTree = "<group>"; };
 		932FA94829C41E62004E28AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		932FA94929C568CD004E28AC /* ProfileSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSelectorView.swift; sourceTree = "<group>"; };
+		932FA94B29C56E95004E28AC /* GlobalStyleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStyleModel.swift; sourceTree = "<group>"; };
+		932FA94D29C584B7004E28AC /* ButtonUserTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonUserTypeView.swift; sourceTree = "<group>"; };
+		932FA95129C58E0F004E28AC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		937DD64429C3FF860042BC4B /* clust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clust.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		937DD64729C3FF860042BC4B /* clustApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clustApp.swift; sourceTree = "<group>"; };
 		937DD64929C3FF860042BC4B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +50,8 @@
 			isa = PBXGroup;
 			children = (
 				932FA94529C41049004E28AC /* LoginModel.swift */,
+				932FA94B29C56E95004E28AC /* GlobalStyleModel.swift */,
+				932FA95129C58E0F004E28AC /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -58,6 +68,8 @@
 			children = (
 				937DD64929C3FF860042BC4B /* ContentView.swift */,
 				932FA94029C40925004E28AC /* StartScreenView.swift */,
+				932FA94929C568CD004E28AC /* ProfileSelectorView.swift */,
+				932FA94D29C584B7004E28AC /* ButtonUserTypeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,7 +184,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				932FA94129C40925004E28AC /* StartScreenView.swift in Sources */,
+				932FA95229C58E0F004E28AC /* UserModel.swift in Sources */,
 				932FA94629C41049004E28AC /* LoginModel.swift in Sources */,
+				932FA94C29C56E95004E28AC /* GlobalStyleModel.swift in Sources */,
+				932FA94E29C584B7004E28AC /* ButtonUserTypeView.swift in Sources */,
+				932FA94A29C568CD004E28AC /* ProfileSelectorView.swift in Sources */,
 				937DD64A29C3FF860042BC4B /* ContentView.swift in Sources */,
 				937DD64829C3FF860042BC4B /* clustApp.swift in Sources */,
 			);
