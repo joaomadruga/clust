@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		932F49C029C6141F005C535C /* StartScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F49BF29C6141F005C535C /* StartScreenViewModel.swift */; };
+		932F49C229C64139005C535C /* ProfileSelectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F49C129C64139005C535C /* ProfileSelectorViewModel.swift */; };
 		932FA94129C40925004E28AC /* StartScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932FA94029C40925004E28AC /* StartScreenView.swift */; };
 		932FA94629C41049004E28AC /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932FA94529C41049004E28AC /* LoginModel.swift */; };
 		932FA94A29C568CD004E28AC /* ProfileSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932FA94929C568CD004E28AC /* ProfileSelectorView.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		932F49BF29C6141F005C535C /* StartScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewModel.swift; sourceTree = "<group>"; };
+		932F49C129C64139005C535C /* ProfileSelectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSelectorViewModel.swift; sourceTree = "<group>"; };
 		932FA94029C40925004E28AC /* StartScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenView.swift; sourceTree = "<group>"; };
 		932FA94529C41049004E28AC /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		932FA94729C4190F004E28AC /* clust.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = clust.entitlements; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 		932FA93E29C40036004E28AC /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				932F49BF29C6141F005C535C /* StartScreenViewModel.swift */,
+				932F49C129C64139005C535C /* ProfileSelectorViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -187,6 +193,8 @@
 				932FA95229C58E0F004E28AC /* UserModel.swift in Sources */,
 				932FA94629C41049004E28AC /* LoginModel.swift in Sources */,
 				932FA94C29C56E95004E28AC /* GlobalStyleModel.swift in Sources */,
+				932F49C029C6141F005C535C /* StartScreenViewModel.swift in Sources */,
+				932F49C229C64139005C535C /* ProfileSelectorViewModel.swift in Sources */,
 				932FA94E29C584B7004E28AC /* ButtonUserTypeView.swift in Sources */,
 				932FA94A29C568CD004E28AC /* ProfileSelectorView.swift in Sources */,
 				937DD64A29C3FF860042BC4B /* ContentView.swift in Sources */,

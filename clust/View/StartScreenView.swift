@@ -10,8 +10,8 @@ import AuthenticationServices
 
 struct StartScreenView: View {
     let globalStyle: GlobalStyle
-    // It's mocked since i did not discovered how to enable apple sign in auth in simulator.
-    let UserLoginInfo:LoginInfo = .init(name: "José", email: "zezinho@teste.com")
+    
+    @StateObject private var viewModel = StartScreenViewModel()
     
     
     var body: some View {
@@ -20,7 +20,7 @@ struct StartScreenView: View {
                 Image("GroupClust")
                 Spacer()
                 
-                NavigationLink(destination: ProfileSelectorView(loginInfo: UserLoginInfo, globalStyle: globalStyle).allScreensStyle()) {
+                NavigationLink(destination: ProfileSelectorView(loginInfo: viewModel.UserLoginInfo, globalStyle: globalStyle).allScreensStyle()) {
                     SignInWithAppleButton(
                             .signIn,
                             onRequest: { request in

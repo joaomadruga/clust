@@ -11,33 +11,33 @@ struct ProfileSelectorView: View {
     let loginInfo: LoginInfo
     let globalStyle: GlobalStyle
     
-    @State private var isStudentButtonChecked:Bool = true
+    @StateObject private var viewModel = ProfileSelectorViewModel()
     
     var body: some View {
         VStack {
             Text("Você é estudante ou mentora?")
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .frame(maxWidth: .infinity)
                     .font(.largeTitle)
                     .foregroundColor(Color(UIColor.label))
                     .fontWeight(.bold)
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 30, trailing: 0))
             
             Button(action: {
-                self.isStudentButtonChecked = true
+                viewModel.isStudentButtonChecked = true
             }, label: {
-                ButtonUserTypeView(globalStyle: globalStyle, isStudentButton: true, isButtonChecked: isStudentButtonChecked)
-            }).contentShape(Rectangle())
+                ButtonUserTypeView(globalStyle: globalStyle, isStudentButton: true, isButtonChecked: viewModel.isStudentButtonChecked)
+            })
+            
             Button(action: {
-                self.isStudentButtonChecked = false
+                viewModel.isStudentButtonChecked = false
             }, label: {
-                ButtonUserTypeView(globalStyle: globalStyle, isStudentButton: false, isButtonChecked: !isStudentButtonChecked)
+                ButtonUserTypeView(globalStyle: globalStyle, isStudentButton: false, isButtonChecked: !viewModel.isStudentButtonChecked)
             })
 
             Spacer()
             
             Button(action: {
-                let userModel:UserModel = .init(loginInfo: loginInfo, isStudent: isStudentButtonChecked)
+                let userModel = viewModel.createUserModel(loginInfo: loginInfo)
                 print(userModel)
             }, label: {
                 Text("Continuar")
@@ -47,7 +47,6 @@ struct ProfileSelectorView: View {
             .buttonStyle(.borderedProminent)
             .tint(globalStyle.mainGreen)
             .foregroundColor(.white)
-            
         }
     }
 
