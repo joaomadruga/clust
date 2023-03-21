@@ -15,13 +15,8 @@ struct ProfileSelectorView: View {
     
     var body: some View {
         VStack {
-            Text("Você é estudante ou mentora?")
-                .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.largeTitle)
-                    .foregroundColor(Color(UIColor.label))
-                    .fontWeight(.bold)
-                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 30, trailing: 0))
-            
+            HeaderTitleView(text: "Você é estudante ou mentora?")
+           
             Button(action: {
                 viewModel.isStudentButtonChecked = true
             }, label: {
@@ -35,18 +30,11 @@ struct ProfileSelectorView: View {
             })
 
             Spacer()
-            
-            Button(action: {
+            MainButtonView(globalStyle: globalStyle, destinationScreen: QuizMembersNumberView(globalStyle: globalStyle), buttonAction: {
                 let userModel = viewModel.createUserModel(loginInfo: loginInfo)
                 print(userModel)
-            }, label: {
-                Text("Continuar")
-                    .frame(maxWidth: .infinity)
-                    .padding(10)
             })
-            .buttonStyle(.borderedProminent)
-            .tint(globalStyle.mainGreen)
-            .foregroundColor(.white)
+            
         }
     }
 
