@@ -14,24 +14,21 @@ struct ListOfSelectionsView: View {
     @StateObject var viewModel = ListOfSelectionsViewModel(listOfSelectionsView: [])
 
     var body: some View {
-        List(viewModel.listOfSelectionsView, id: \.self.hashValue) { option in
-            Button(action: {
-                viewModel.cleanAllOptionsChecked()
-                viewModel.selectCurrentButton(index: option.index)
-            }, label: {
-                SelectionButtonView(globalStyle: globalStyle, isButtonChecked: option.isChecked, text: option.text)
-            })
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .listRowSeparator(.hidden)
+        ScrollView {
+            VStack{
+                ForEach(viewModel.listOfSelectionsView, id: \.self.hashValue) { option in
+                    Button(action: {
+                        viewModel.cleanAllOptionsChecked()
+                        viewModel.selectCurrentButton(index: option.index)
+                    }, label: {
+                        SelectionButtonView(globalStyle: globalStyle, isButtonChecked: option.isChecked, text: option.text)
+                    })
+                }
+            }
         }
-        .frame(maxWidth: .infinity)
-        .background(.white)
-        .scrollContentBackground(.hidden)
-        
         .onAppear(perform: {
             viewModel.listOfSelectionsView = listOfSelectionsView
         })
-        
     }
 
 }
