@@ -32,6 +32,7 @@ struct ListOfSelectionsView: View {
             viewModel.listOfSelectionsView = listOfSelectionsView
         })
         
+        
     }
 
 }

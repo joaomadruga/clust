@@ -27,6 +27,7 @@
 		937DD64F29C3FF880042BC4B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 937DD64E29C3FF880042BC4B /* Preview Assets.xcassets */; };
 		93EEE53729C92DEA00A04DD9 /* OptionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EEE53629C92DEA00A04DD9 /* OptionsModel.swift */; };
 		93EEE53929C936BD00A04DD9 /* SelectionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EEE53829C936BD00A04DD9 /* SelectionButtonView.swift */; };
+		E7E8061729CA348F0035D3A3 /* ListOfPeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E8061629CA348F0035D3A3 /* ListOfPeopleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		937DD64E29C3FF880042BC4B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		93EEE53629C92DEA00A04DD9 /* OptionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsModel.swift; sourceTree = "<group>"; };
 		93EEE53829C936BD00A04DD9 /* SelectionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionButtonView.swift; sourceTree = "<group>"; };
+		E7E8061629CA348F0035D3A3 /* ListOfPeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfPeopleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				9357979029C8E340005E81DB /* ChooseAreaView.swift */,
 				9357979229C8E567005E81DB /* ListOfSelectionView.swift */,
 				93EEE53829C936BD00A04DD9 /* SelectionButtonView.swift */,
+				E7E8061629CA348F0035D3A3 /* ListOfPeopleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				932FA95229C58E0F004E28AC /* UserModel.swift in Sources */,
 				9357979329C8E567005E81DB /* ListOfSelectionView.swift in Sources */,
 				932F49C629C6CEB8005C535C /* HeaderTitleView.swift in Sources */,
+				E7E8061729CA348F0035D3A3 /* ListOfPeopleView.swift in Sources */,
 				932F49C429C64CA6005C535C /* MainButtonView.swift in Sources */,
 				932FA94629C41049004E28AC /* LoginModel.swift in Sources */,
 				932F49C829C6D163005C535C /* QuizMembersNumberView.swift in Sources */,
