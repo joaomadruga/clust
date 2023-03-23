@@ -42,6 +42,7 @@ struct StartScreenView: View {
                         .signInWithAppleButtonStyle(.black)
                         .frame(maxWidth: .infinity)
                 }
+                
         }
     }
     

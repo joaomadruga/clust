@@ -10,27 +10,31 @@ import SwiftUI
 struct MainButtonView: View {
     let globalStyle: GlobalStyle
     let destinationScreen: any View
+    let backButtonText: String
     let buttonAction: () -> Void
     
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
-        Button(action: {
-            buttonAction()
-        }, label: {
-            NavigationLink(destination: AnyView(destinationScreen).allScreensStyle()) {
+        NavigationLink(destination: AnyView(destinationScreen).allScreensStyle()) {
                 Text("Continuar")
                     .frame(maxWidth: .infinity)
-                    .padding(10)
-            }
+                    .padding(14)
+                    .cornerRadius(14)
+                    .foregroundColor(.white)
+                    .background(globalStyle.mainGreen)
+                    
+        }.simultaneousGesture(TapGesture().onEnded{
+            buttonAction()
         })
-        .buttonStyle(.borderedProminent)
-        .tint(globalStyle.mainGreen)
-        .foregroundColor(.white)
+            .cornerRadius(14)
     }
+        
 }
 
 struct MainButtonView_Previews: PreviewProvider {
     
     static var previews: some View {
-        MainButtonView(globalStyle: .init(), destinationScreen: QuizMembersNumberView(globalStyle: .init()), buttonAction: { print("hello world") }).allScreensStyle()
+        MainButtonView(globalStyle: .init(), destinationScreen: QuizMembersNumberView(globalStyle: .init()), backButtonText: "Voltar", buttonAction: { print("hello world") }).allScreensStyle()
     }
 }

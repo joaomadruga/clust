@@ -9,11 +9,22 @@ import SwiftUI
 
 struct ChooseAreaView: View {
     let globalStyle: GlobalStyle
+    @StateObject var viewModel: ChooseAreaViewModel
+    
+    init(globalStyle: GlobalStyle, QuizUserModel: QuizUserModel) {
+        self.globalStyle = globalStyle
+        _viewModel = StateObject(wrappedValue: ChooseAreaViewModel(QuizUserModel: QuizUserModel))
+    }
+    
     
     var body: some View {
-        VStack{
+        VStack {
             HeaderTitleView(text: "Em qual área de aprendizagem deseja focar neste desafio?")
-            ListOfSelectionsView(globalStyle: globalStyle, listOfSelectionsView: [.init(index: 0, text: "Desenvolvimento"), .init(index: 1, text: "Design"), .init(index: 2, text: "Inovação")])
+            ListOfSelectionsView(globalStyle: globalStyle, listOfSelections: $viewModel.ListOfSelections)
+            Spacer()
+            MainButtonView(globalStyle: globalStyle, destinationScreen: Text("teste"), backButtonText: "Sair", buttonAction: {
+                viewModel.onClickButton()
+            })
         }
         .frame(maxWidth: .infinity)
     }
@@ -21,6 +32,6 @@ struct ChooseAreaView: View {
 
 struct ChooseAreaView_Previews: PreviewProvider {
     static var previews: some View {
-        ChooseAreaView(globalStyle: .init()).allScreensStyle()
+        ChooseAreaView(globalStyle: .init(), QuizUserModel: .init()).allScreensStyle()
     }
 }

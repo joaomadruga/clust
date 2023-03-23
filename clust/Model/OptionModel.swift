@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct OptionsModel: Hashable {
+struct OptionModel: Hashable {
     let index: Int
     let text: String
     var isChecked: Bool = false

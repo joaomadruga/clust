@@ -9,32 +9,33 @@ import SwiftUI
 
 struct ListOfSelectionsView: View {
     let globalStyle: GlobalStyle
-    let listOfSelectionsView: [OptionsModel]
+    @ObservedObject var viewModel: ListOfSelectionsViewModel
+    init(globalStyle: GlobalStyle, listOfSelections: Binding<[OptionModel]>) {
+        self.globalStyle = globalStyle
+        self.viewModel = ListOfSelectionsViewModel(listOfSelections: listOfSelections)
+    }
     
-    @StateObject var viewModel = ListOfSelectionsViewModel(listOfSelectionsView: [])
 
     var body: some View {
         ScrollView {
             VStack{
-                ForEach(viewModel.listOfSelectionsView, id: \.self.hashValue) { option in
+                ForEach(viewModel.listOfSelections, id: \.self.hashValue) { option in
                     Button(action: {
                         viewModel.cleanAllOptionsChecked()
-                        viewModel.selectCurrentButton(index: option.index)
+                        viewModel.selectCurrentButton(index: option.wrappedValue.index)
                     }, label: {
-                        SelectionButtonView(globalStyle: globalStyle, isButtonChecked: option.isChecked, text: option.text)
+                        SelectionButtonView(globalStyle: globalStyle, isButtonChecked: option.wrappedValue.isChecked, text: option.wrappedValue.text)
                     })
                 }
             }
         }
-        .onAppear(perform: {
-            viewModel.listOfSelectionsView = listOfSelectionsView
-        })
     }
 
 }
 
 struct ListOfSelectionsView_Preview: PreviewProvider {
     static var previews: some View {
-        ListOfSelectionsView(globalStyle: .init(), listOfSelectionsView: [.init(index: 0, text: "Desenvolvimento"), .init(index: 1, text: "Design"), .init(index: 2, text: "Inovação")])
+        // Como fazer esse preview com binding?
+        Text("não sei fazer esse preview :(")
     }
 }

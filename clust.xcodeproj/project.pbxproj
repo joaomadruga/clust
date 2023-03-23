@@ -25,7 +25,11 @@
 		937DD64A29C3FF860042BC4B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937DD64929C3FF860042BC4B /* ContentView.swift */; };
 		937DD64C29C3FF880042BC4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 937DD64B29C3FF880042BC4B /* Assets.xcassets */; };
 		937DD64F29C3FF880042BC4B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 937DD64E29C3FF880042BC4B /* Preview Assets.xcassets */; };
-		93EEE53729C92DEA00A04DD9 /* OptionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EEE53629C92DEA00A04DD9 /* OptionsModel.swift */; };
+		93D56D7729CABC3B00313019 /* BackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D56D7629CABC3B00313019 /* BackButtonView.swift */; };
+		93D56D7929CB8DA900313019 /* QuizUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D56D7829CB8DA900313019 /* QuizUserModel.swift */; };
+		93D56D7B29CB8F6800313019 /* QuizMembersNumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D56D7A29CB8F6800313019 /* QuizMembersNumberViewModel.swift */; };
+		93D56D7D29CBD71100313019 /* ChooseAreaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D56D7C29CBD71100313019 /* ChooseAreaViewModel.swift */; };
+		93EEE53729C92DEA00A04DD9 /* OptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EEE53629C92DEA00A04DD9 /* OptionModel.swift */; };
 		93EEE53929C936BD00A04DD9 /* SelectionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EEE53829C936BD00A04DD9 /* SelectionButtonView.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +55,11 @@
 		937DD64929C3FF860042BC4B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		937DD64B29C3FF880042BC4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		937DD64E29C3FF880042BC4B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		93EEE53629C92DEA00A04DD9 /* OptionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsModel.swift; sourceTree = "<group>"; };
+		93D56D7629CABC3B00313019 /* BackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonView.swift; sourceTree = "<group>"; };
+		93D56D7829CB8DA900313019 /* QuizUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizUserModel.swift; sourceTree = "<group>"; };
+		93D56D7A29CB8F6800313019 /* QuizMembersNumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizMembersNumberViewModel.swift; sourceTree = "<group>"; };
+		93D56D7C29CBD71100313019 /* ChooseAreaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAreaViewModel.swift; sourceTree = "<group>"; };
+		93EEE53629C92DEA00A04DD9 /* OptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionModel.swift; sourceTree = "<group>"; };
 		93EEE53829C936BD00A04DD9 /* SelectionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,7 +80,8 @@
 				932FA94529C41049004E28AC /* LoginModel.swift */,
 				932FA94B29C56E95004E28AC /* GlobalStyleModel.swift */,
 				932FA95129C58E0F004E28AC /* UserModel.swift */,
-				93EEE53629C92DEA00A04DD9 /* OptionsModel.swift */,
+				93EEE53629C92DEA00A04DD9 /* OptionModel.swift */,
+				93D56D7829CB8DA900313019 /* QuizUserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -81,8 +90,10 @@
 			isa = PBXGroup;
 			children = (
 				932F49BF29C6141F005C535C /* StartScreenViewModel.swift */,
+				93D56D7C29CBD71100313019 /* ChooseAreaViewModel.swift */,
 				932F49C129C64139005C535C /* ProfileSelectorViewModel.swift */,
 				9357979429C8E633005E81DB /* ListOfSelectionsViewModel.swift */,
+				93D56D7A29CB8F6800313019 /* QuizMembersNumberViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -100,6 +111,7 @@
 				9357979029C8E340005E81DB /* ChooseAreaView.swift */,
 				9357979229C8E567005E81DB /* ListOfSelectionView.swift */,
 				93EEE53829C936BD00A04DD9 /* SelectionButtonView.swift */,
+				93D56D7629CABC3B00313019 /* BackButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -217,19 +229,23 @@
 				9357979129C8E340005E81DB /* ChooseAreaView.swift in Sources */,
 				93EEE53929C936BD00A04DD9 /* SelectionButtonView.swift in Sources */,
 				932FA94129C40925004E28AC /* StartScreenView.swift in Sources */,
-				93EEE53729C92DEA00A04DD9 /* OptionsModel.swift in Sources */,
+				93EEE53729C92DEA00A04DD9 /* OptionModel.swift in Sources */,
 				932FA95229C58E0F004E28AC /* UserModel.swift in Sources */,
 				9357979329C8E567005E81DB /* ListOfSelectionView.swift in Sources */,
 				932F49C629C6CEB8005C535C /* HeaderTitleView.swift in Sources */,
 				932F49C429C64CA6005C535C /* MainButtonView.swift in Sources */,
+				93D56D7D29CBD71100313019 /* ChooseAreaViewModel.swift in Sources */,
 				932FA94629C41049004E28AC /* LoginModel.swift in Sources */,
 				932F49C829C6D163005C535C /* QuizMembersNumberView.swift in Sources */,
 				932FA94C29C56E95004E28AC /* GlobalStyleModel.swift in Sources */,
+				93D56D7929CB8DA900313019 /* QuizUserModel.swift in Sources */,
 				932F49C029C6141F005C535C /* StartScreenViewModel.swift in Sources */,
 				932F49C229C64139005C535C /* ProfileSelectorViewModel.swift in Sources */,
 				932FA94E29C584B7004E28AC /* ButtonUserTypeView.swift in Sources */,
 				9357979529C8E633005E81DB /* ListOfSelectionsViewModel.swift in Sources */,
+				93D56D7B29CB8F6800313019 /* QuizMembersNumberViewModel.swift in Sources */,
 				932FA94A29C568CD004E28AC /* ProfileSelectorView.swift in Sources */,
+				93D56D7729CABC3B00313019 /* BackButtonView.swift in Sources */,
 				937DD64A29C3FF860042BC4B /* ContentView.swift in Sources */,
 				937DD64829C3FF860042BC4B /* clustApp.swift in Sources */,
 			);

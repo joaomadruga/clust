@@ -9,28 +9,28 @@ import SwiftUI
 
 extension ListOfSelectionsView {
     class ListOfSelectionsViewModel: ObservableObject {
-        @Published var listOfSelectionsView: [OptionsModel]
+        var listOfSelections: Binding<[OptionModel]>
         
-        init(listOfSelectionsView: [OptionsModel]) {
-            self.listOfSelectionsView = listOfSelectionsView
+        init(listOfSelections: Binding<[OptionModel]>) {
+            self.listOfSelections = listOfSelections
         }
         
         
         func insertSelectionView(optionIndex: Int, text: String, isChecked: Bool) -> Void {
-            self.listOfSelectionsView.append(.init(index: optionIndex, text: text, isChecked: isChecked))
+            listOfSelections.wrappedValue.append(.init(index: optionIndex, text: text, isChecked: isChecked))
         }
         
         func cleanAllOptionsChecked() {
             //let teste = self.currentOptionsChecked.map({ $0.isChecked = false })
-            for index in listOfSelectionsView.indices {
-                listOfSelectionsView[index].isChecked = false
+            for index in listOfSelections.indices {
+                listOfSelections[index].wrappedValue.isChecked = false
             }
-            print(listOfSelectionsView)
+            print(listOfSelections)
         }
         
         func selectCurrentButton(index: Int) {
-            listOfSelectionsView[index].isChecked = true
-            print(listOfSelectionsView)
+            listOfSelections[index].wrappedValue.isChecked = true
+            print(listOfSelections)
         }
     }
 }

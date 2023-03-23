@@ -12,18 +12,28 @@ struct SelectionButtonView: View {
     let isButtonChecked: Bool
     let text: String
     var body: some View {
-        Text(text)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .font(.headline)
-            .padding([.bottom, .top], 24)
-            .padding([.leading, .trailing], 16)
-            .foregroundColor(isButtonChecked ? globalStyle.mainGreen : globalStyle.systemGrey1)
-            .overlay(
-                RoundedRectangle(cornerRadius: 16)
-                    .stroke(isButtonChecked ? globalStyle.mainGreen : globalStyle.systemGrey5, lineWidth: 4)
-            )
-            .background(isButtonChecked ? globalStyle.lightGreen : .white)
-            .cornerRadius(16)
+        HStack {
+            Text(text)
+                .padding([.leading], 12)
+                .padding([.top], 36)
+            Spacer()
+            if isButtonChecked {
+                Image(systemName: "checkmark.circle.fill")
+                    .frame(alignment: .top)
+                    .padding([.trailing], 12)
+                    .padding([.bottom], 36)
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .font(.headline)
+        .padding([.top, .bottom], 12)
+        .overlay(
+            RoundedRectangle(cornerRadius: 16)
+                .stroke(isButtonChecked ? globalStyle.mainGreen : globalStyle.systemGrey5, lineWidth: 4)
+        )
+        .foregroundColor(isButtonChecked ? .white : globalStyle.systemGrey1)
+        .background(isButtonChecked ? globalStyle.mainGreen : .white)
+        .cornerRadius(16)
     }
 }
 

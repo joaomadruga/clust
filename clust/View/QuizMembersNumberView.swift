@@ -9,33 +9,28 @@ import SwiftUI
 
 struct QuizMembersNumberView: View {
     let globalStyle: GlobalStyle
-    @State private var username: String = ""
+    @State private var membersNumber: String = ""
+    @StateObject private var viewModel = QuizMembersNumberViewModel()
     
-    func teste(){
-        print("hello world")
-    }
     var body: some View {
-        NavigationView {
-            VStack {
-                HeaderTitleView(text: "Quantos integrantes por equipe seria ideal nesse desafio?")
-                TextField(
-                    "Pessoas por grupo",
-                    text: $username
-                )
-                .padding(14)
-                .background(globalStyle.inputGrey)
-                .cornerRadius(10)
-                .onSubmit {
-                    print("hello world")
-                }
-                .textInputAutocapitalization(.never)
-                .disableAutocorrection(true)
-                .keyboardType(.numberPad)
-                
-                Spacer()
-                
-                MainButtonView(globalStyle: globalStyle, destinationScreen: ChooseAreaView(globalStyle: globalStyle), buttonAction: teste)
-            }
+        VStack {
+            HeaderTitleView(text: "Quantos integrantes por equipe seria ideal nesse desafio?")
+            TextField(
+                "Pessoas por grupo",
+                text: $membersNumber
+            )
+            .padding(14)
+            .background(globalStyle.inputGrey)
+            .cornerRadius(10)
+            .textInputAutocapitalization(.never)
+            .disableAutocorrection(true)
+            .keyboardType(.numberPad)
+            
+            Spacer()
+            
+            MainButtonView(globalStyle: globalStyle, destinationScreen: ChooseAreaView(globalStyle: globalStyle, QuizUserModel: viewModel.QuizUserModel), backButtonText: "Sair", buttonAction: {
+                viewModel.onClickButton(numberOfGroupMembers:  membersNumber)
+            })
         }
     }
 }

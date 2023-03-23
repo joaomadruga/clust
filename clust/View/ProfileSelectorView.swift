@@ -30,7 +30,7 @@ struct ProfileSelectorView: View {
             })
 
             Spacer()
-            MainButtonView(globalStyle: globalStyle, destinationScreen: QuizMembersNumberView(globalStyle: globalStyle), buttonAction: {
+            MainButtonView(globalStyle: globalStyle, destinationScreen: QuizMembersNumberView(globalStyle: globalStyle), backButtonText: "Sair", buttonAction: {
                 let userModel = viewModel.createUserModel(loginInfo: loginInfo)
                 print(userModel)
             })
