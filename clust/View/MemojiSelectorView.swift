@@ -27,10 +27,12 @@ struct MemojiSelectorView: View {
                             .resizable()
                             .fontWeight(.light)
                             .frame(width: 20, height: 20)
+                            .foregroundColor(globalStyle.memojiInputBlack)
                         Text("Toque para inserir seu Memoji")
                             .multilineTextAlignment(.center)
                             .font(.system(size: 13))
                             .fontWeight(.medium)
+                            .foregroundColor(globalStyle.memojiInputBlack)
                     }.padding(15)
                 }
             }
