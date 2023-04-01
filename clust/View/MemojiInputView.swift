@@ -5,9 +5,10 @@ import UIKit
 struct MemojiInputView: UIViewControllerRepresentable {
     @Binding var memojiText: String
     @Binding var imageBase64String: String?
+    @Binding var backgroundColor: LinearGradient
 
     func makeUIViewController(context: Context) -> MemojiInputViewController {
-        return MemojiInputViewController(coordinator: makeCoordinator())
+        return MemojiInputViewController(coordinator: makeCoordinator(), backgroundColor: $backgroundColor)
     }
 
     func updateUIViewController(_ viewController: MemojiInputViewController, context: Context) {
@@ -45,7 +46,7 @@ struct MemojiInputView: UIViewControllerRepresentable {
             if let image = UIPasteboard.general.image {
                 
                 // Convert the image to a base64-encoded string and set it as the memoji text
-                let imageData = image.jpegData(compressionQuality: 1.0)!
+                let imageData = image.pngData()!
                 let base64String = imageData.base64EncodedString()
 
                 // Set the imageBase64String variable to the base64-encoded string of the image
@@ -63,10 +64,11 @@ class MemojiInputViewController: UIViewController {
     var coordinator: MemojiInputView.Coordinator
     let memojiSelectorView: UIView
     
-    init(textView: EmojiTextField = EmojiTextField(), coordinator: MemojiInputView.Coordinator) {
+    init(textView: EmojiTextField = EmojiTextField(), coordinator: MemojiInputView.Coordinator, backgroundColor: Binding<LinearGradient>) {
         self.textView = textView
         self.coordinator = coordinator
-        self.memojiSelectorView = UIHostingController(rootView: MemojiSelectorView(imageBase64String: coordinator.$imageBase64String)).view!
+        self.memojiSelectorView = UIHostingController(rootView: MemojiSelectorView(imageBase64String: coordinator.$imageBase64String, backgroundColor: backgroundColor)).view!
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -128,6 +130,6 @@ class EmojiTextField: UITextView {
 
 struct MemojiInputView_Previews: PreviewProvider {
     static var previews: some View {
-        MemojiInputView(memojiText: .constant("teste"), imageBase64String: .constant(.init()))
+        MemojiInputView(memojiText: .constant("teste"), imageBase64String: .constant(.init()), backgroundColor: .constant(GlobalStyle().linearGray))
     }
 }

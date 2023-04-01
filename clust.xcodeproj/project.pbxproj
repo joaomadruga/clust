@@ -23,6 +23,9 @@
 		9357979529C8E633005E81DB /* ListOfSelectionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357979429C8E633005E81DB /* ListOfSelectionsViewModel.swift */; };
 		937DD64A29C3FF860042BC4B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937DD64929C3FF860042BC4B /* ContentView.swift */; };
 		938AF6C929D7D5460027F03A /* MemojiSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938AF6C829D7D5460027F03A /* MemojiSelectorView.swift */; };
+		938AF6CB29D878D10027F03A /* ProfileColorButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938AF6CA29D878D10027F03A /* ProfileColorButtonView.swift */; };
+		938AF6CD29D8804A0027F03A /* CreateProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938AF6CC29D880490027F03A /* CreateProfileView.swift */; };
+		938AF6CF29D890C20027F03A /* CurrentCheckedColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938AF6CE29D890C20027F03A /* CurrentCheckedColorModel.swift */; };
 		93A740B129D736AE00457159 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93A740B029D736AE00457159 /* Assets.xcassets */; };
 		93CDC2FB29D734990043FD59 /* clustApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CDC2F829D734990043FD59 /* clustApp.swift */; };
 		93D56D7729CABC3B00313019 /* BackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D56D7629CABC3B00313019 /* BackButtonView.swift */; };
@@ -58,6 +61,9 @@
 		937DD64429C3FF860042BC4B /* clust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clust.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		937DD64929C3FF860042BC4B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		938AF6C829D7D5460027F03A /* MemojiSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemojiSelectorView.swift; sourceTree = "<group>"; };
+		938AF6CA29D878D10027F03A /* ProfileColorButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileColorButtonView.swift; sourceTree = "<group>"; };
+		938AF6CC29D880490027F03A /* CreateProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileView.swift; sourceTree = "<group>"; };
+		938AF6CE29D890C20027F03A /* CurrentCheckedColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCheckedColorModel.swift; sourceTree = "<group>"; };
 		93A740B029D736AE00457159 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93CDC2F529D7348D0043FD59 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93CDC2F729D734990043FD59 /* clust.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = clust.entitlements; sourceTree = "<group>"; };
@@ -98,6 +104,7 @@
 				93EEE53629C92DEA00A04DD9 /* OptionModel.swift */,
 				93D56D7829CB8DA900313019 /* QuizUserModel.swift */,
 				93D56D8129CF9DB200313019 /* TopicsModel.swift */,
+				938AF6CE29D890C20027F03A /* CurrentCheckedColorModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -135,6 +142,8 @@
 				93D56D8929D2735F00313019 /* FindTopicView.swift */,
 				93D56D8B29D3D88400313019 /* MemojiInputView.swift */,
 				938AF6C829D7D5460027F03A /* MemojiSelectorView.swift */,
+				938AF6CA29D878D10027F03A /* ProfileColorButtonView.swift */,
+				938AF6CC29D880490027F03A /* CreateProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -260,6 +269,7 @@
 				932FA94629C41049004E28AC /* LoginModel.swift in Sources */,
 				932F49C829C6D163005C535C /* QuizMembersNumberView.swift in Sources */,
 				93CDC2FB29D734990043FD59 /* clustApp.swift in Sources */,
+				938AF6CD29D8804A0027F03A /* CreateProfileView.swift in Sources */,
 				93D56D8C29D3D88400313019 /* MemojiInputView.swift in Sources */,
 				932FA94C29C56E95004E28AC /* GlobalStyleModel.swift in Sources */,
 				93D56D7929CB8DA900313019 /* QuizUserModel.swift in Sources */,
@@ -269,8 +279,10 @@
 				9357979529C8E633005E81DB /* ListOfSelectionsViewModel.swift in Sources */,
 				93D56D7B29CB8F6800313019 /* QuizMembersNumberViewModel.swift in Sources */,
 				932FA94A29C568CD004E28AC /* ProfileSelectorView.swift in Sources */,
+				938AF6CB29D878D10027F03A /* ProfileColorButtonView.swift in Sources */,
 				93D56D7729CABC3B00313019 /* BackButtonView.swift in Sources */,
 				937DD64A29C3FF860042BC4B /* ContentView.swift in Sources */,
+				938AF6CF29D890C20027F03A /* CurrentCheckedColorModel.swift in Sources */,
 				93D56D8229CF9DB200313019 /* TopicsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
