@@ -7,9 +7,7 @@ struct MemojiInputView: UIViewControllerRepresentable {
     @Binding var imageBase64String: String?
 
     func makeUIViewController(context: Context) -> MemojiInputViewController {
-        let viewController = MemojiInputViewController()
-        viewController.coordinator = makeCoordinator()
-        return viewController
+        return MemojiInputViewController(coordinator: makeCoordinator())
     }
 
     func updateUIViewController(_ viewController: MemojiInputViewController, context: Context) {
@@ -22,6 +20,15 @@ struct MemojiInputView: UIViewControllerRepresentable {
         return Coordinator(memojiInputView: self, imageBase64String: $imageBase64String)
     }
     
+    var textInputMode: UITextInputMode? {
+            for mode in UITextInputMode.activeInputModes {
+                if mode.primaryLanguage == "emoji" {
+                    return mode
+                }
+            }
+            return nil
+    }
+    
     
     class Coordinator: NSObject, UITextViewDelegate {
         var memojiInputView: MemojiInputView
@@ -32,9 +39,9 @@ struct MemojiInputView: UIViewControllerRepresentable {
             self._imageBase64String = imageBase64String
         }
         
+        
         func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
             // Check if the pasteboard contains an image
-
             if let image = UIPasteboard.general.image {
                 
                 // Convert the image to a base64-encoded string and set it as the memoji text
@@ -45,29 +52,77 @@ struct MemojiInputView: UIViewControllerRepresentable {
                 self.imageBase64String = base64String
             }
 
-            // Return true to allow the string to be pasted into the text field
-            return true
+            // Return false to dont the string to be pasted into the text field
+            return false
         }
     }
 }
 
 class MemojiInputViewController: UIViewController {
-    var textView = UITextView()
-    var coordinator: MemojiInputView.Coordinator?
-
+    var textView = EmojiTextField()
+    var coordinator: MemojiInputView.Coordinator
+    let memojiSelectorView: UIView
+    
+    init(textView: EmojiTextField = EmojiTextField(), coordinator: MemojiInputView.Coordinator) {
+        self.textView = textView
+        self.coordinator = coordinator
+        self.memojiSelectorView = UIHostingController(rootView: MemojiSelectorView(imageBase64String: coordinator.$imageBase64String)).view!
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func buttonaction(button: UIButton) {
+        print("clicked")
+        if textView.isFirstResponder {
+            textView.resignFirstResponder()
+        } else {
+            textView.becomeFirstResponder()
+        }
+        
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        textView.text = "Insira memoji"
+        
+        view.addSubview(textView)
+        textView.addSubview(memojiSelectorView)
+        
+        memojiSelectorView.translatesAutoresizingMaskIntoConstraints = false
+        memojiSelectorView.leadingAnchor.constraint(equalTo: textView.leadingAnchor).isActive = true
+        memojiSelectorView.trailingAnchor.constraint(equalTo: textView.trailingAnchor).isActive = true
+        memojiSelectorView.topAnchor.constraint(equalTo: textView.topAnchor).isActive = true
+        memojiSelectorView.bottomAnchor.constraint(equalTo: textView.bottomAnchor).isActive = true
+        memojiSelectorView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonaction)))
+        
+        
+        //Setting Cursor color to none
+        textView.tintColor = UIColor.clear
         textView.allowsEditingTextAttributes = true
         textView.delegate = coordinator
-        view.addSubview(textView)
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         textView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         textView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         textView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-         
+        
+    }
+}
+
+class EmojiTextField: UITextView {
+
+    // required for iOS 13
+    override var textInputContextIdentifier: String? { "" } // return non-nil to show the Emoji keyboard ¯\_(ツ)_/¯
+
+    override var textInputMode: UITextInputMode? {
+        for mode in UITextInputMode.activeInputModes {
+            if mode.primaryLanguage == "emoji" {
+                return mode
+            }
+        }
+        return nil
     }
 }
 

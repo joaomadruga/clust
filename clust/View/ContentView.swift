@@ -15,28 +15,10 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            StartScreenView(globalStyle: globalStyle).allScreensStyle()
-            /*
-            VStack {
-                MemojiInputView(memojiText: $memojiText, imageBase64String: $imageBase64String)
-                        .padding()
-                        .onReceive(NotificationCenter.default.publisher(for: UIPasteboard.changedNotification)) { _ in
-                            print("pasteboard changed.")
-                            if let image = UIPasteboard.general.image {
-                                //print(UIPasteboard.general.items)
-                                let imageData = image.jpegData(compressionQuality: 1.0)!
-                                let base64String = imageData.base64EncodedString()
-                                imageBase64String = base64String
-                            }
-                        }
-                if let imageBase64String = imageBase64String, let imageData = Data(base64Encoded: imageBase64String), let uiImage = UIImage(data: imageData) {
-                    Image(uiImage: uiImage)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .padding()
-                }
-            }
-            */
+            //StartScreenView(globalStyle: globalStyle).allScreensStyle()
+            MemojiInputView(memojiText: $memojiText, imageBase64String: $imageBase64String)
+                .frame(alignment: .center)
+                .frame(width: 150, height: 150)
         }
         .colorScheme(.light)
         .accentColor(globalStyle.mainGreen)

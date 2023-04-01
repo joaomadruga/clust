@@ -22,6 +22,7 @@
 		9357979329C8E567005E81DB /* ListOfSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357979229C8E567005E81DB /* ListOfSelectionView.swift */; };
 		9357979529C8E633005E81DB /* ListOfSelectionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357979429C8E633005E81DB /* ListOfSelectionsViewModel.swift */; };
 		937DD64A29C3FF860042BC4B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937DD64929C3FF860042BC4B /* ContentView.swift */; };
+		938AF6C929D7D5460027F03A /* MemojiSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938AF6C829D7D5460027F03A /* MemojiSelectorView.swift */; };
 		93A740B129D736AE00457159 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93A740B029D736AE00457159 /* Assets.xcassets */; };
 		93CDC2FB29D734990043FD59 /* clustApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CDC2F829D734990043FD59 /* clustApp.swift */; };
 		93D56D7729CABC3B00313019 /* BackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D56D7629CABC3B00313019 /* BackButtonView.swift */; };
@@ -56,6 +57,7 @@
 		9357979429C8E633005E81DB /* ListOfSelectionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfSelectionsViewModel.swift; sourceTree = "<group>"; };
 		937DD64429C3FF860042BC4B /* clust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clust.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		937DD64929C3FF860042BC4B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		938AF6C829D7D5460027F03A /* MemojiSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemojiSelectorView.swift; sourceTree = "<group>"; };
 		93A740B029D736AE00457159 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93CDC2F529D7348D0043FD59 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93CDC2F729D734990043FD59 /* clust.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = clust.entitlements; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				93D56D8529CFC57300313019 /* SelectionTopicView.swift */,
 				93D56D8929D2735F00313019 /* FindTopicView.swift */,
 				93D56D8B29D3D88400313019 /* MemojiInputView.swift */,
+				938AF6C829D7D5460027F03A /* MemojiSelectorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				93D56D8429CFC4E200313019 /* ListOfTopicsView.swift in Sources */,
 				93D56D7D29CBD71100313019 /* ChooseAreaViewModel.swift in Sources */,
 				93D56D8A29D2735F00313019 /* FindTopicView.swift in Sources */,
+				938AF6C929D7D5460027F03A /* MemojiSelectorView.swift in Sources */,
 				932FA94629C41049004E28AC /* LoginModel.swift in Sources */,
 				932F49C829C6D163005C535C /* QuizMembersNumberView.swift in Sources */,
 				93CDC2FB29D734990043FD59 /* clustApp.swift in Sources */,

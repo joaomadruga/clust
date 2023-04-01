@@ -15,5 +15,6 @@ struct GlobalStyle {
     let systemGrey1: Color = Color(red: 61/255, green: 60/255, blue: 70/255, opacity: 1.0)
     let systemGrey2: Color = Color(red: 130/255, green: 130/255, blue: 136/255, opacity: 1.0)
     let systemGrey5: Color = Color(red: 229/255, green: 229/255, blue: 234/255, opacity: 1.0)
+    let systemGrey6: Color = Color(red: 244/255, green: 244/255, blue: 245/255, opacity: 1.0)
     let inputGrey: Color = Color(red: 118/255, green: 118/255, blue: 128/255, opacity: 0.12)
 }
