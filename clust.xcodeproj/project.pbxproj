@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		932F49C029C6141F005C535C /* StartScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F49BF29C6141F005C535C /* StartScreenViewModel.swift */; };
+		932F49C029C6141F005C535C /* CreateProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F49BF29C6141F005C535C /* CreateProfileViewModel.swift */; };
 		932F49C229C64139005C535C /* ProfileSelectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F49C129C64139005C535C /* ProfileSelectorViewModel.swift */; };
 		932F49C429C64CA6005C535C /* MainButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F49C329C64CA6005C535C /* MainButtonView.swift */; };
 		932F49C629C6CEB8005C535C /* HeaderTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F49C529C6CEB8005C535C /* HeaderTitleView.swift */; };
@@ -44,7 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		932F49BF29C6141F005C535C /* StartScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewModel.swift; sourceTree = "<group>"; };
+		932F49BF29C6141F005C535C /* CreateProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileViewModel.swift; sourceTree = "<group>"; };
 		932F49C129C64139005C535C /* ProfileSelectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSelectorViewModel.swift; sourceTree = "<group>"; };
 		932F49C329C64CA6005C535C /* MainButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonView.swift; sourceTree = "<group>"; };
 		932F49C529C6CEB8005C535C /* HeaderTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTitleView.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 		932FA93E29C40036004E28AC /* View Model */ = {
 			isa = PBXGroup;
 			children = (
-				932F49BF29C6141F005C535C /* StartScreenViewModel.swift */,
+				932F49BF29C6141F005C535C /* CreateProfileViewModel.swift */,
 				93D56D7C29CBD71100313019 /* ChooseAreaViewModel.swift */,
 				932F49C129C64139005C535C /* ProfileSelectorViewModel.swift */,
 				9357979429C8E633005E81DB /* ListOfSelectionsViewModel.swift */,
@@ -273,7 +273,7 @@
 				93D56D8C29D3D88400313019 /* MemojiInputView.swift in Sources */,
 				932FA94C29C56E95004E28AC /* GlobalStyleModel.swift in Sources */,
 				93D56D7929CB8DA900313019 /* QuizUserModel.swift in Sources */,
-				932F49C029C6141F005C535C /* StartScreenViewModel.swift in Sources */,
+				932F49C029C6141F005C535C /* CreateProfileViewModel.swift in Sources */,
 				932F49C229C64139005C535C /* ProfileSelectorViewModel.swift in Sources */,
 				932FA94E29C584B7004E28AC /* ButtonUserTypeView.swift in Sources */,
 				9357979529C8E633005E81DB /* ListOfSelectionsViewModel.swift in Sources */,

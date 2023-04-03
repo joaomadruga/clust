@@ -8,11 +8,11 @@
 import Foundation
 
 class UserModel {
-    let loginInfo: LoginInfo
+    let loginModel: LoginModel
     let isStudent: Bool
     
-    init(loginInfo: LoginInfo, isStudent: Bool) {
-        self.loginInfo = loginInfo
+    init(loginModel: LoginModel, isStudent: Bool) {
+        self.loginModel = loginModel
         self.isStudent = isStudent
     }
     
