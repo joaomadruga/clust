@@ -6,17 +6,16 @@
 //
 
 import Foundation
-
-import Foundation
+import SwiftUI
 
 extension QuizMembersNumberView {
     class QuizMembersNumberViewModel: ObservableObject {
-        @Published var QuizUserModel:QuizUserModel = .init()
+        @ObservedObject var QuizUserModel:QuizUserModel = .init()
         
         func onClickButton(numberOfGroupMembers: String) {
             let intNumberOfGroupMembers = Int(numberOfGroupMembers) ?? 0
             self.QuizUserModel.numberOfGroupMembers = intNumberOfGroupMembers
-            print(self.QuizUserModel)
+            print(self.QuizUserModel.numberOfGroupMembers)
         }
     }
 }

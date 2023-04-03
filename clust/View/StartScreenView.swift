@@ -11,41 +11,15 @@ import AuthenticationServices
 struct StartScreenView: View {
     let globalStyle: GlobalStyle
     
-    @StateObject private var viewModel = StartScreenViewModel()
-    
-    
     var body: some View {
             VStack {
                 Spacer()
                 Image("GroupClust")
                 Spacer()
                 
-                NavigationLink(destination: ProfileSelectorView(loginInfo: viewModel.UserLoginInfo, globalStyle: globalStyle).allScreensStyle()) {
-                    SignInWithAppleButton(
-                            .signIn,
-                            onRequest: { request in
-                                request.requestedScopes = [.fullName, .email]
-                            },
-                            onCompletion: { result in
-                                switch result {
-                                    case .success (let authValues):
-                                        print(authValues)
-                                        print("Authorization successful.")
-                                        //UserLoginInfo.name = request.requestedScopes.fullName
-                                        //UserLoginInfo.email = request.requestedScopes.email
-                                    case .failure (let error):
-                                        print("Authorization failed: " + error.localizedDescription)
-                                    }
-                            }
-                        )
-                        .frame(height: 50)
-                        .signInWithAppleButtonStyle(.black)
-                        .frame(maxWidth: .infinity)
-                }
-                
+                MainButtonView(globalStyle: globalStyle, destinationScreen: CreateProfileView(globalStyle: globalStyle), backButtonText: "Voltar", buttonAction: {}, buttonText: "Criar conta")
         }
     }
-    
 }
 
 struct StartScreenView_Previews: PreviewProvider {

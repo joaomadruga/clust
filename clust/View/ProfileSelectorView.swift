@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileSelectorView: View {
-    let loginInfo: LoginInfo
+    let loginModel: LoginModel
     let globalStyle: GlobalStyle
     
     @StateObject private var viewModel = ProfileSelectorViewModel()
@@ -31,7 +31,7 @@ struct ProfileSelectorView: View {
 
             Spacer()
             MainButtonView(globalStyle: globalStyle, destinationScreen: QuizMembersNumberView(globalStyle: globalStyle), backButtonText: "Sair", buttonAction: {
-                let userModel = viewModel.createUserModel(loginInfo: loginInfo)
+                let userModel = viewModel.createUserModel(loginModel: loginModel)
                 print(userModel)
             })
             
@@ -42,6 +42,6 @@ struct ProfileSelectorView: View {
 
 struct ProfileSelectorView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileSelectorView(loginInfo: .init(name: "Maria", email: "zezinho@teste.com"), globalStyle: .init()).allScreensStyle()
+        ProfileSelectorView(loginModel: .init(), globalStyle: .init()).allScreensStyle()
     }
 }

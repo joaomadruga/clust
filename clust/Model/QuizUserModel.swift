@@ -7,13 +7,17 @@
 
 import Foundation
 
-struct QuizUserModel: Hashable {
+class QuizUserModel: ObservableObject {
     var numberOfGroupMembers: Int = 0
     var learningArea: String = ""
-    var learningTheme: String = ""
-    let listOfPreferredThemes: [String] = []
+    var learningTopic: String = ""
+    let listOfPreferredTopics: [String] = []
     
-    mutating func insertLearningArea(learningArea: String) {
+    func insertLearningArea(learningArea: String) {
         self.learningArea = learningArea
+    }
+    
+    func insertLearningTopic(learningTopic: String) {
+        self.learningTopic = learningTopic
     }
 }

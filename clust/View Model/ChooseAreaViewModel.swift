@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 extension ChooseAreaView {
     class ChooseAreaViewModel: ObservableObject {
@@ -24,8 +25,9 @@ extension ChooseAreaView {
                     break
                 }
             }
-            self.QuizUserModel.learningArea = learningArea
-            print(self.QuizUserModel)
+            self.QuizUserModel.insertLearningArea(learningArea: learningArea)
+            print(self.QuizUserModel.numberOfGroupMembers)
+            print(self.QuizUserModel.learningArea)
         }
     }
 }

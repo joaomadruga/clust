@@ -22,7 +22,7 @@ struct ChooseAreaView: View {
             HeaderTitleView(text: "Em qual área de aprendizagem deseja focar neste desafio?")
             ListOfSelectionsView(globalStyle: globalStyle, listOfSelections: $viewModel.ListOfSelections)
             Spacer()
-            MainButtonView(globalStyle: globalStyle, destinationScreen: Text("teste"), backButtonText: "Sair", buttonAction: {
+            MainButtonView(globalStyle: globalStyle, destinationScreen: ChooseTopicView(globalStyle: globalStyle, QuizUserModel: viewModel.QuizUserModel), backButtonText: "Sair", buttonAction: {
                 viewModel.onClickButton()
             })
         }

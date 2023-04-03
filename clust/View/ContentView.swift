@@ -13,11 +13,14 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             StartScreenView(globalStyle: globalStyle).allScreensStyle()
+            //CreateProfileView(globalStyle: globalStyle).allScreensStyle()
         }
         .colorScheme(.light)
         .accentColor(globalStyle.mainGreen)
     }
 }
+
+
 
 extension View {
     func allScreensStyle() -> some View {

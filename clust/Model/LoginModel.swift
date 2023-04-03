@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct LoginInfo: Hashable {
-    let name: String
-    let email: String
+class LoginModel: ObservableObject {
+    var name: String = ""
+    var email: String = ""
+    var profileImage: String? = nil
+    var profileImageBackground: CurrentCheckedColorModel = .init()
 }
