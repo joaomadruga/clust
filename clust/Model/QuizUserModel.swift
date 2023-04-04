@@ -11,7 +11,7 @@ class QuizUserModel: ObservableObject {
     var numberOfGroupMembers: Int = 0
     var learningArea: String = ""
     var learningTopic: String = ""
-    let listOfPreferredTopics: [String] = []
+    var listOfPreferredTopics: [String] = []
     
     func insertLearningArea(learningArea: String) {
         self.learningArea = learningArea
@@ -19,5 +19,9 @@ class QuizUserModel: ObservableObject {
     
     func insertLearningTopic(learningTopic: String) {
         self.learningTopic = learningTopic
+    }
+    
+    func insertListOfPreferredTopics(listOfPreferredTopics: [String]) {
+        self.listOfPreferredTopics = listOfPreferredTopics
     }
 }

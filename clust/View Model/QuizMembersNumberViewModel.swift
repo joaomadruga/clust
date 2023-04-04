@@ -15,7 +15,6 @@ extension QuizMembersNumberView {
         func onClickButton(numberOfGroupMembers: String) {
             let intNumberOfGroupMembers = Int(numberOfGroupMembers) ?? 0
             self.QuizUserModel.numberOfGroupMembers = intNumberOfGroupMembers
-            print(self.QuizUserModel.numberOfGroupMembers)
         }
     }
 }

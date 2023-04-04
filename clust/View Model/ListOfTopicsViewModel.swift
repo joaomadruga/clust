@@ -28,11 +28,9 @@ class ListOfTopicsViewModel: ObservableObject {
         }
     }
     
-    func selectCurrentOption(selectedTopic: String) {
-        quizUserModel.insertLearningTopic(learningTopic: selectedTopic)
-        print(self.quizUserModel.learningTopic)
-        print(self.quizUserModel.learningArea)
-        print(self.quizUserModel.numberOfGroupMembers)
+    func selectCurrentOption(showLoadingScreenView: Binding<Bool>) {
+        quizUserModel.insertLearningTopic(learningTopic: topicsModel.searchText.wrappedValue)
+        showLoadingScreenView.wrappedValue = true
     }
     
     

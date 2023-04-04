@@ -17,7 +17,6 @@ extension CreateProfileView {
             self.LoginModel.email = email
             self.LoginModel.profileImage = profileImage
             self.LoginModel.profileImageBackground = profileImageBackground
-            print(self.LoginModel.name)
         }
     }
 }

@@ -77,7 +77,6 @@ class MemojiInputViewController: UIViewController {
     }
     
     @objc func buttonaction(button: UIButton) {
-        print("clicked")
         if textView.isFirstResponder {
             textView.resignFirstResponder()
         } else {

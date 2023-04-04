@@ -26,8 +26,6 @@ extension ChooseAreaView {
                 }
             }
             self.QuizUserModel.insertLearningArea(learningArea: learningArea)
-            print(self.QuizUserModel.numberOfGroupMembers)
-            print(self.QuizUserModel.learningArea)
         }
     }
 }
