@@ -12,7 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            StartScreenView(globalStyle: globalStyle).allScreensStyle()
+            SplashScreenView(globalStyle: globalStyle)
         }
         .colorScheme(.light)
         .accentColor(globalStyle.mainGreen)

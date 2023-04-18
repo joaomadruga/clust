@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40C81D8029E7915000952706 /* FormGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C81D7F29E7915000952706 /* FormGroupView.swift */; };
+		40C81D8229E79CE400952706 /* ActiveRoomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C81D8129E79CE400952706 /* ActiveRoomCardView.swift */; };
+		40C81D8429E7A99400952706 /* splashsClust.json in Resources */ = {isa = PBXBuildFile; fileRef = 40C81D8329E7A99400952706 /* splashsClust.json */; };
+		40C81D8629E7A99B00952706 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C81D8529E7A99B00952706 /* LottieView.swift */; };
+		40C81D8829E7A9C500952706 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C81D8729E7A9C500952706 /* LottieView.swift */; };
+		40C81D8B29E7AA8F00952706 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 40C81D8A29E7AA8F00952706 /* Lottie */; };
+		40C81D8D29EB5F7400952706 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C81D8C29EB5F7400952706 /* SplashScreenView.swift */; };
+		40C81D8F29EB74FE00952706 /* clust.json in Resources */ = {isa = PBXBuildFile; fileRef = 40C81D8E29EB74FE00952706 /* clust.json */; };
+		40C81D9129ECCAC300952706 /* TeamCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C81D9029ECCAC200952706 /* TeamCardView.swift */; };
+		40C81D9329ECCCB700952706 /* TeamPassGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C81D9229ECCCB600952706 /* TeamPassGenerator.swift */; };
 		932F49C029C6141F005C535C /* StartScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F49BF29C6141F005C535C /* StartScreenViewModel.swift */; };
 		932F49C229C64139005C535C /* ProfileSelectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F49C129C64139005C535C /* ProfileSelectorViewModel.swift */; };
 		932F49C429C64CA6005C535C /* MainButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F49C329C64CA6005C535C /* MainButtonView.swift */; };
@@ -34,6 +44,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		40C81D7F29E7915000952706 /* FormGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormGroupView.swift; sourceTree = "<group>"; };
+		40C81D8129E79CE400952706 /* ActiveRoomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveRoomCardView.swift; sourceTree = "<group>"; };
+		40C81D8329E7A99400952706 /* splashsClust.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = splashsClust.json; path = "../../deram certo/splashsClust.json"; sourceTree = "<group>"; };
+		40C81D8529E7A99B00952706 /* LottieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LottieView.swift; path = "../../deram certo/LottieView.swift"; sourceTree = "<group>"; };
+		40C81D8729E7A9C500952706 /* LottieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LottieView.swift; path = "../../../deram certo/LottieView.swift"; sourceTree = "<group>"; };
+		40C81D8C29EB5F7400952706 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		40C81D8E29EB74FE00952706 /* clust.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = clust.json; path = ../../clust.json; sourceTree = "<group>"; };
+		40C81D9029ECCAC200952706 /* TeamCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCardView.swift; sourceTree = "<group>"; };
+		40C81D9229ECCCB600952706 /* TeamPassGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TeamPassGenerator.swift; path = clust/Model/TeamPassGenerator.swift; sourceTree = SOURCE_ROOT; };
 		932F49BF29C6141F005C535C /* StartScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewModel.swift; sourceTree = "<group>"; };
 		932F49C129C64139005C535C /* ProfileSelectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSelectorViewModel.swift; sourceTree = "<group>"; };
 		932F49C329C64CA6005C535C /* MainButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonView.swift; sourceTree = "<group>"; };
@@ -68,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40C81D8B29E7AA8F00952706 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +97,7 @@
 		932FA93D29C4002E004E28AC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				40C81D9229ECCCB600952706 /* TeamPassGenerator.swift */,
 				932FA94529C41049004E28AC /* LoginModel.swift */,
 				932FA94B29C56E95004E28AC /* GlobalStyleModel.swift */,
 				932FA95129C58E0F004E28AC /* UserModel.swift */,
@@ -112,6 +133,11 @@
 				9357979229C8E567005E81DB /* ListOfSelectionView.swift */,
 				93EEE53829C936BD00A04DD9 /* SelectionButtonView.swift */,
 				93D56D7629CABC3B00313019 /* BackButtonView.swift */,
+				40C81D7F29E7915000952706 /* FormGroupView.swift */,
+				40C81D8129E79CE400952706 /* ActiveRoomCardView.swift */,
+				40C81D8C29EB5F7400952706 /* SplashScreenView.swift */,
+				40C81D8729E7A9C500952706 /* LottieView.swift */,
+				40C81D9029ECCAC200952706 /* TeamCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -142,6 +168,9 @@
 				932FA93D29C4002E004E28AC /* Model */,
 				937DD64729C3FF860042BC4B /* clustApp.swift */,
 				937DD64B29C3FF880042BC4B /* Assets.xcassets */,
+				40C81D8529E7A99B00952706 /* LottieView.swift */,
+				40C81D8E29EB74FE00952706 /* clust.json */,
+				40C81D8329E7A99400952706 /* splashsClust.json */,
 				937DD64D29C3FF880042BC4B /* Preview Content */,
 			);
 			path = clust;
@@ -171,6 +200,9 @@
 			dependencies = (
 			);
 			name = clust;
+			packageProductDependencies = (
+				40C81D8A29E7AA8F00952706 /* Lottie */,
+			);
 			productName = clust;
 			productReference = 937DD64429C3FF860042BC4B /* clust.app */;
 			productType = "com.apple.product-type.application";
@@ -200,6 +232,9 @@
 				"pt-BR",
 			);
 			mainGroup = 937DD63B29C3FF860042BC4B;
+			packageReferences = (
+				40C81D8929E7AA8F00952706 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 937DD64529C3FF860042BC4B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -215,6 +250,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				937DD64F29C3FF880042BC4B /* Preview Assets.xcassets in Resources */,
+				40C81D8F29EB74FE00952706 /* clust.json in Resources */,
+				40C81D8429E7A99400952706 /* splashsClust.json in Resources */,
 				937DD64C29C3FF880042BC4B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,6 +264,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9357979129C8E340005E81DB /* ChooseAreaView.swift in Sources */,
+				40C81D9129ECCAC300952706 /* TeamCardView.swift in Sources */,
+				40C81D8229E79CE400952706 /* ActiveRoomCardView.swift in Sources */,
+				40C81D8629E7A99B00952706 /* LottieView.swift in Sources */,
+				40C81D9329ECCCB700952706 /* TeamPassGenerator.swift in Sources */,
 				93EEE53929C936BD00A04DD9 /* SelectionButtonView.swift in Sources */,
 				932FA94129C40925004E28AC /* StartScreenView.swift in Sources */,
 				93EEE53729C92DEA00A04DD9 /* OptionModel.swift in Sources */,
@@ -244,8 +285,11 @@
 				932FA94E29C584B7004E28AC /* ButtonUserTypeView.swift in Sources */,
 				9357979529C8E633005E81DB /* ListOfSelectionsViewModel.swift in Sources */,
 				93D56D7B29CB8F6800313019 /* QuizMembersNumberViewModel.swift in Sources */,
+				40C81D8D29EB5F7400952706 /* SplashScreenView.swift in Sources */,
 				932FA94A29C568CD004E28AC /* ProfileSelectorView.swift in Sources */,
+				40C81D8829E7A9C500952706 /* LottieView.swift in Sources */,
 				93D56D7729CABC3B00313019 /* BackButtonView.swift in Sources */,
+				40C81D8029E7915000952706 /* FormGroupView.swift in Sources */,
 				937DD64A29C3FF860042BC4B /* ContentView.swift in Sources */,
 				937DD64829C3FF860042BC4B /* clustApp.swift in Sources */,
 			);
@@ -377,6 +421,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"clust/Preview Content\"";
+				DEVELOPMENT_TEAM = 25PRUPJM4D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = clust/Info.plist;
@@ -406,6 +451,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"clust/Preview Content\"";
+				DEVELOPMENT_TEAM = 25PRUPJM4D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = clust/Info.plist;
@@ -448,6 +494,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		40C81D8929E7AA8F00952706 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		40C81D8A29E7AA8F00952706 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 40C81D8929E7AA8F00952706 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 937DD63C29C3FF860042BC4B /* Project object */;
 }
