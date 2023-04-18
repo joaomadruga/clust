@@ -11,13 +11,14 @@ struct MainButtonView: View {
     let globalStyle: GlobalStyle
     let destinationScreen: any View
     let buttonAction: () -> Void
+    var buttonText: String = "Continuar"
     
     var body: some View {
         Button(action: {
             buttonAction()
         }, label: {
             NavigationLink(destination: AnyView(destinationScreen).allScreensStyle()) {
-                Text("Continuar")
+                Text(buttonText)
                     .frame(maxWidth: .infinity)
                     .padding(10)
             }
@@ -26,6 +27,8 @@ struct MainButtonView: View {
         .tint(globalStyle.mainGreen)
         .foregroundColor(.white)
     }
+    
+    
 }
 
 struct MainButtonView_Previews: PreviewProvider {

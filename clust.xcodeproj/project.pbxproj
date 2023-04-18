@@ -27,7 +27,9 @@
 		937DD64F29C3FF880042BC4B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 937DD64E29C3FF880042BC4B /* Preview Assets.xcassets */; };
 		93EEE53729C92DEA00A04DD9 /* OptionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EEE53629C92DEA00A04DD9 /* OptionsModel.swift */; };
 		93EEE53929C936BD00A04DD9 /* SelectionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EEE53829C936BD00A04DD9 /* SelectionButtonView.swift */; };
+		E74B484E29CC9ED600774C51 /* SeeAllPeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74B484D29CC9ED600774C51 /* SeeAllPeopleView.swift */; };
 		E7E8061729CA348F0035D3A3 /* ListOfPeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E8061629CA348F0035D3A3 /* ListOfPeopleView.swift */; };
+		E7FE772129EEE82300032718 /* CreateChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE772029EEE82300032718 /* CreateChallengeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,7 +56,9 @@
 		937DD64E29C3FF880042BC4B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		93EEE53629C92DEA00A04DD9 /* OptionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsModel.swift; sourceTree = "<group>"; };
 		93EEE53829C936BD00A04DD9 /* SelectionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionButtonView.swift; sourceTree = "<group>"; };
-		E7E8061629CA348F0035D3A3 /* ListOfPeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfPeopleView.swift; sourceTree = "<group>"; };
+		E74B484D29CC9ED600774C51 /* SeeAllPeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllPeopleView.swift; sourceTree = "<group>"; };
+		E7E8061629CA348F0035D3A3 /* ListOfPeopleView.swift */ = {isa = PBXFileReference; indentWidth = 40; lastKnownFileType = sourcecode.swift; path = ListOfPeopleView.swift; sourceTree = "<group>"; tabWidth = 41; usesTabs = 0; wrapsLines = 0; };
+		E7FE772029EEE82300032718 /* CreateChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChallengeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				9357979229C8E567005E81DB /* ListOfSelectionView.swift */,
 				93EEE53829C936BD00A04DD9 /* SelectionButtonView.swift */,
 				E7E8061629CA348F0035D3A3 /* ListOfPeopleView.swift */,
+				E74B484D29CC9ED600774C51 /* SeeAllPeopleView.swift */,
+				E7FE772029EEE82300032718 /* CreateChallengeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -220,6 +226,8 @@
 				9357979129C8E340005E81DB /* ChooseAreaView.swift in Sources */,
 				93EEE53929C936BD00A04DD9 /* SelectionButtonView.swift in Sources */,
 				932FA94129C40925004E28AC /* StartScreenView.swift in Sources */,
+				E74B484E29CC9ED600774C51 /* SeeAllPeopleView.swift in Sources */,
+				E7FE772129EEE82300032718 /* CreateChallengeView.swift in Sources */,
 				93EEE53729C92DEA00A04DD9 /* OptionsModel.swift in Sources */,
 				932FA95229C58E0F004E28AC /* UserModel.swift in Sources */,
 				9357979329C8E567005E81DB /* ListOfSelectionView.swift in Sources */,
