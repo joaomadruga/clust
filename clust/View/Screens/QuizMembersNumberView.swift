@@ -9,8 +9,17 @@ import SwiftUI
 
 struct QuizMembersNumberView: View {
     let globalStyle: GlobalStyle
-    @State private var membersNumber: String = ""
-    @StateObject private var viewModel = QuizMembersNumberViewModel()
+    @State var membersNumber: String
+    //@StateObject var QuizUserModel: QuizUserModel = .init()
+    var viewModel: QuizMembersNumberViewModel
+    
+    
+    init(globalStyle: GlobalStyle) {
+        self.globalStyle = globalStyle
+        self.membersNumber = ""
+        self.viewModel = .init()
+    }
+    
     
     var body: some View {
         VStack {
@@ -33,6 +42,7 @@ struct QuizMembersNumberView: View {
             })
         }
     }
+    
 }
 
 struct QuizMembersNumberView_Previews: PreviewProvider {

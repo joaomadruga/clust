@@ -25,12 +25,10 @@ extension ListOfSelectionsView {
             for index in listOfSelections.indices {
                 listOfSelections[index].wrappedValue.isChecked = false
             }
-            print(listOfSelections)
         }
         
         func selectCurrentButton(index: Int) {
             listOfSelections[index].wrappedValue.isChecked = true
-            print(listOfSelections)
         }
     }
 }

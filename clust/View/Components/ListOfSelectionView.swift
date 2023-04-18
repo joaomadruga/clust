@@ -35,7 +35,6 @@ struct ListOfSelectionsView: View {
 
 struct ListOfSelectionsView_Preview: PreviewProvider {
     static var previews: some View {
-        // Como fazer esse preview com binding?
-        Text("não sei fazer esse preview :(")
+        ListOfSelectionsView(globalStyle: .init(), listOfSelections: .constant(.init()))
     }
 }

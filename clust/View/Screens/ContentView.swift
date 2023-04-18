@@ -19,6 +19,8 @@ struct ContentView: View {
     }
 }
 
+
+
 extension View {
     func allScreensStyle() -> some View {
         self.background(.white)
