@@ -9,17 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     let globalStyle = GlobalStyle()
-    
     var body: some View {
         NavigationStack {
             StartScreenView(globalStyle: globalStyle).allScreensStyle()
-            //CreateProfileView(globalStyle: globalStyle).allScreensStyle()
+            //RoomsViewExample()
         }
         .colorScheme(.light)
         .accentColor(globalStyle.mainGreen)
     }
 }
-
+    
 
 
 extension View {

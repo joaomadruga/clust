@@ -10,7 +10,6 @@ import SwiftUI
 struct QuizMembersNumberView: View {
     let globalStyle: GlobalStyle
     @State var membersNumber: String
-    //@StateObject var QuizUserModel: QuizUserModel = .init()
     var viewModel: QuizMembersNumberViewModel
     
     
