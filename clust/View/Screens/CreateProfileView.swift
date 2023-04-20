@@ -77,7 +77,7 @@ struct CreateProfileView: View {
                         
                         Spacer()
                 
-                        MainButtonView(globalStyle: globalStyle, destinationScreen: { ProfileSelectorView(loginModel: viewModel.LoginModel, globalStyle: globalStyle) }(), backButtonText: "Voltar", buttonAction: {
+                        MainButtonView(globalStyle: globalStyle, destinationScreen: { FormGroupView(globalStyle: globalStyle) }(), backButtonText: "Voltar", buttonAction: {
                             viewModel.onClickButton(name: nameInputText, email: emailInputText, profileImage: imageBase64String, profileImageBackground: currentCheckedColor)
                         }, buttonText: "Criar perfil")
             }

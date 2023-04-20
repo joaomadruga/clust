@@ -11,7 +11,8 @@ struct ContentView: View {
     let globalStyle = GlobalStyle()
     var body: some View {
         NavigationStack {
-            StartScreenView(globalStyle: globalStyle).allScreensStyle()
+            SplashScreenView(globalStyle: globalStyle)
+            //StartScreenView(globalStyle: globalStyle).allScreensStyle()
             //RoomsViewExample()
         }
         .colorScheme(.light)

@@ -21,6 +21,15 @@
 		932FA94C29C56E95004E28AC /* GlobalStyleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932FA94B29C56E95004E28AC /* GlobalStyleModel.swift */; };
 		932FA94E29C584B7004E28AC /* ButtonUserTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932FA94D29C584B7004E28AC /* ButtonUserTypeView.swift */; };
 		932FA95229C58E0F004E28AC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932FA95129C58E0F004E28AC /* UserModel.swift */; };
+		934827B729F0C75C009FBF00 /* ActiveRoomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934827B629F0C75C009FBF00 /* ActiveRoomCardView.swift */; };
+		934827B929F0C792009FBF00 /* FormGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934827B829F0C792009FBF00 /* FormGroupView.swift */; };
+		934827BB29F0C7ED009FBF00 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934827BA29F0C7ED009FBF00 /* SplashScreenView.swift */; };
+		934827BD29F0C841009FBF00 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934827BC29F0C841009FBF00 /* LottieView.swift */; };
+		934827C029F0C869009FBF00 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 934827BF29F0C869009FBF00 /* Lottie */; };
+		934827C229F0C8F0009FBF00 /* clust.json in Resources */ = {isa = PBXBuildFile; fileRef = 934827C129F0C8F0009FBF00 /* clust.json */; };
+		934827C429F0CA58009FBF00 /* CreateRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934827C329F0CA58009FBF00 /* CreateRoomView.swift */; };
+		934827C629F0CAA0009FBF00 /* ListOfPeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934827C529F0CAA0009FBF00 /* ListOfPeopleView.swift */; };
+		934827C829F0CBEB009FBF00 /* ListOfMembersScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934827C729F0CBEB009FBF00 /* ListOfMembersScreenView.swift */; };
 		9357979129C8E340005E81DB /* ChooseAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357979029C8E340005E81DB /* ChooseAreaView.swift */; };
 		9357979329C8E567005E81DB /* ListOfSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357979229C8E567005E81DB /* ListOfSelectionView.swift */; };
 		9357979529C8E633005E81DB /* ListOfSelectionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357979429C8E633005E81DB /* ListOfSelectionsViewModel.swift */; };
@@ -65,6 +74,14 @@
 		932FA94B29C56E95004E28AC /* GlobalStyleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStyleModel.swift; sourceTree = "<group>"; };
 		932FA94D29C584B7004E28AC /* ButtonUserTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonUserTypeView.swift; sourceTree = "<group>"; };
 		932FA95129C58E0F004E28AC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		934827B629F0C75C009FBF00 /* ActiveRoomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveRoomCardView.swift; sourceTree = "<group>"; };
+		934827B829F0C792009FBF00 /* FormGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormGroupView.swift; sourceTree = "<group>"; };
+		934827BA29F0C7ED009FBF00 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		934827BC29F0C841009FBF00 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		934827C129F0C8F0009FBF00 /* clust.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = clust.json; sourceTree = "<group>"; };
+		934827C329F0CA58009FBF00 /* CreateRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomView.swift; sourceTree = "<group>"; };
+		934827C529F0CAA0009FBF00 /* ListOfPeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfPeopleView.swift; sourceTree = "<group>"; };
+		934827C729F0CBEB009FBF00 /* ListOfMembersScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfMembersScreenView.swift; sourceTree = "<group>"; };
 		9357979029C8E340005E81DB /* ChooseAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAreaView.swift; sourceTree = "<group>"; };
 		9357979229C8E567005E81DB /* ListOfSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfSelectionView.swift; sourceTree = "<group>"; };
 		9357979429C8E633005E81DB /* ListOfSelectionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfSelectionsViewModel.swift; sourceTree = "<group>"; };
@@ -102,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				934827C029F0C869009FBF00 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				93A740B029D736AE00457159 /* Assets.xcassets */,
+				934827C129F0C8F0009FBF00 /* clust.json */,
 				932FA93F29C4003A004E28AC /* View */,
 				932FA93E29C40036004E28AC /* View Model */,
 				932FA93D29C4002E004E28AC /* Model */,
@@ -193,6 +212,9 @@
 				938AF6CA29D878D10027F03A /* ProfileColorButtonView.swift */,
 				93CDADA329DB751A00F84E38 /* LightGreenButtonView.swift */,
 				9357979229C8E567005E81DB /* ListOfSelectionView.swift */,
+				934827B629F0C75C009FBF00 /* ActiveRoomCardView.swift */,
+				934827BC29F0C841009FBF00 /* LottieView.swift */,
+				934827C529F0CAA0009FBF00 /* ListOfPeopleView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -210,6 +232,10 @@
 				93CDADA129DB6FE500F84E38 /* LoadingScreenView.swift */,
 				93CDADA529DB9DB800F84E38 /* ChooseTopThreeTopicsView.swift */,
 				93095B2529E391B500FFBFC0 /* RoomsViewExample.swift */,
+				934827B829F0C792009FBF00 /* FormGroupView.swift */,
+				934827BA29F0C7ED009FBF00 /* SplashScreenView.swift */,
+				934827C329F0CA58009FBF00 /* CreateRoomView.swift */,
+				934827C729F0CBEB009FBF00 /* ListOfMembersScreenView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -230,6 +256,9 @@
 			dependencies = (
 			);
 			name = clust;
+			packageProductDependencies = (
+				934827BF29F0C869009FBF00 /* Lottie */,
+			);
 			productName = clust;
 			productReference = 937DD64429C3FF860042BC4B /* clust.app */;
 			productType = "com.apple.product-type.application";
@@ -242,7 +271,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					937DD64329C3FF860042BC4B = {
 						CreatedOnToolsVersion = 14.2;
@@ -260,6 +289,7 @@
 			);
 			mainGroup = 937DD63B29C3FF860042BC4B;
 			packageReferences = (
+				934827BE29F0C869009FBF00 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 937DD64529C3FF860042BC4B /* Products */;
 			projectDirPath = "";
@@ -276,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93A740B129D736AE00457159 /* Assets.xcassets in Resources */,
+				934827C229F0C8F0009FBF00 /* clust.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,13 +325,16 @@
 				93D56D8629CFC57300313019 /* SelectionTopicView.swift in Sources */,
 				93EEE53729C92DEA00A04DD9 /* OptionModel.swift in Sources */,
 				932FA95229C58E0F004E28AC /* UserModel.swift in Sources */,
+				934827BB29F0C7ED009FBF00 /* SplashScreenView.swift in Sources */,
 				9357979329C8E567005E81DB /* ListOfSelectionView.swift in Sources */,
 				932F49C629C6CEB8005C535C /* HeaderTitleView.swift in Sources */,
 				932F49C429C64CA6005C535C /* MainButtonView.swift in Sources */,
+				934827B729F0C75C009FBF00 /* ActiveRoomCardView.swift in Sources */,
 				93D56D7F29CF470B00313019 /* ChooseTopicView.swift in Sources */,
 				93D56D8429CFC4E200313019 /* ListOfTopicsView.swift in Sources */,
 				93095B2C29E3B54F00FFBFC0 /* RoomModel.swift in Sources */,
 				93D56D7D29CBD71100313019 /* ChooseAreaViewModel.swift in Sources */,
+				934827C829F0CBEB009FBF00 /* ListOfMembersScreenView.swift in Sources */,
 				93D56D8A29D2735F00313019 /* FindTopicView.swift in Sources */,
 				938AF6C929D7D5460027F03A /* MemojiSelectorView.swift in Sources */,
 				932FA94629C41049004E28AC /* LoginModel.swift in Sources */,
@@ -308,19 +342,23 @@
 				93CDC2FB29D734990043FD59 /* clustApp.swift in Sources */,
 				938AF6CD29D8804A0027F03A /* CreateProfileView.swift in Sources */,
 				93D56D8C29D3D88400313019 /* MemojiInputView.swift in Sources */,
+				934827C629F0CAA0009FBF00 /* ListOfPeopleView.swift in Sources */,
 				932FA94C29C56E95004E28AC /* GlobalStyleModel.swift in Sources */,
 				93D56D7929CB8DA900313019 /* QuizUserModel.swift in Sources */,
 				93095B2629E391B500FFBFC0 /* RoomsViewExample.swift in Sources */,
 				932F49C029C6141F005C535C /* CreateProfileViewModel.swift in Sources */,
+				934827C429F0CA58009FBF00 /* CreateRoomView.swift in Sources */,
 				93095B2829E392DF00FFBFC0 /* RoomsViewModelExample.swift in Sources */,
 				932F49C229C64139005C535C /* ProfileSelectorViewModel.swift in Sources */,
 				932FA94E29C584B7004E28AC /* ButtonUserTypeView.swift in Sources */,
+				934827BD29F0C841009FBF00 /* LottieView.swift in Sources */,
 				9357979529C8E633005E81DB /* ListOfSelectionsViewModel.swift in Sources */,
 				93D56D7B29CB8F6800313019 /* QuizMembersNumberViewModel.swift in Sources */,
 				932FA94A29C568CD004E28AC /* ProfileSelectorView.swift in Sources */,
 				938AF6CB29D878D10027F03A /* ProfileColorButtonView.swift in Sources */,
 				93CDADA429DB751A00F84E38 /* LightGreenButtonView.swift in Sources */,
 				93D56D7729CABC3B00313019 /* BackButtonView.swift in Sources */,
+				934827B929F0C792009FBF00 /* FormGroupView.swift in Sources */,
 				937DD64A29C3FF860042BC4B /* ContentView.swift in Sources */,
 				93CDADA229DB6FE500F84E38 /* LoadingScreenView.swift in Sources */,
 				938AF6CF29D890C20027F03A /* CurrentCheckedColorModel.swift in Sources */,
@@ -336,6 +374,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -396,6 +435,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -532,6 +572,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		934827BE29F0C869009FBF00 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		934827BF29F0C869009FBF00 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 934827BE29F0C869009FBF00 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 937DD63C29C3FF860042BC4B /* Project object */;
 }
