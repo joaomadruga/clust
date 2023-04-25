@@ -10,11 +10,15 @@ import SwiftUI
 
 extension QuizMembersNumberView {
     class QuizMembersNumberViewModel: ObservableObject {
-        @ObservedObject var QuizUserModel:QuizUserModel = .init()
+        @ObservedObject var QuizUserModel: QuizUserModel
+        
+        init(QuizUserModel: QuizUserModel) {
+            self.QuizUserModel = QuizUserModel
+        }
         
         func onClickButton(numberOfGroupMembers: String) {
             let intNumberOfGroupMembers = Int(numberOfGroupMembers) ?? 0
-            self.QuizUserModel.numberOfGroupMembers = intNumberOfGroupMembers
+            self.QuizUserModel.insertNumberOfGroupMembers(numberOfGroupMembers: intNumberOfGroupMembers)
         }
     }
 }

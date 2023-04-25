@@ -8,18 +8,27 @@ import SwiftUI
 
 struct FormGroupView: View {
     let globalStyle: GlobalStyle
-    let activeRooms: Bool = true
-    //ProfileSelectorView(loginModel: viewModel.LoginModel, globalStyle: globalStyle)
+    let loginModel: LoginModel
     let listOfChallenges: [String] = ["Foundations", "Pear", "Paris", "Teste"]
-    //let finishedRooms: Bool
     @State private var selected = 0
+    @StateObject var viewModel = FormGroupViewModel()
 
     var body: some View {
         VStack {
+            if !loginModel.isStudent {
+                HStack {
+                    Spacer()
+                    NavigationLink(destination: AnyView(CreateRoomView(globalStyle: globalStyle, formGroupViewModel: viewModel, roomOwnerName: loginModel.name)).allScreensStyle())  {
+                        Text("Nova sala")
+                        Image(systemName: "plus")
+                    }
+                }.foregroundColor(globalStyle.mainGreen)
+            }
             HStack {
                 HeaderTitleView(text: "Formar Equipe")
                 Spacer()
-                Circle().frame(width: 40).padding(.bottom, 30)
+                RoundedMemojiView(base64String: loginModel.profileImage, backgroundIndex: loginModel.profileImageBackgroundIndex, width: 40, height: 40)
+                    .padding(.bottom, 30)
             }
 
             Picker(selection: $selected, label: Text("Tabs")) {
@@ -29,16 +38,15 @@ struct FormGroupView: View {
             .pickerStyle(SegmentedPickerStyle())
             .padding(.bottom, 16)
 
-
             if selected == 0 {
-                if activeRooms {
+                if viewModel.availableRooms.count > 0 {
                     ScrollView() {
-                        ForEach(listOfChallenges, id: \.self.hashValue) { challengeName in
-                            ActiveRoomCardView(challengeName: challengeName)
+                        ForEach(viewModel.availableRooms, id: \.self.hashValue) { room in
+                            ActiveRoomCardView(globalStyle: globalStyle, room: room, userMemoji: loginModel.profileImage, userName: loginModel.name)
+                                .environmentObject(viewModel)
                                 .padding(.bottom, 16)
                         }
                     }
-
                 } else {
                     VStack {
                         Text("Nenhuma sala ativa no momento.")
@@ -55,11 +63,15 @@ struct FormGroupView: View {
                 Spacer()
                 }
             }
+        .navigationBarBackButtonHidden(true)
+        .onAppear() {
+            viewModel.advertiseLeftRoom(peer: viewModel.peerID)
+        }
         }
 }
 
 struct FormGroupView_Previews: PreviewProvider {
     static var previews: some View {
-        FormGroupView(globalStyle: .init()).allScreensStyle()
+        FormGroupView(globalStyle: .init(), loginModel: .init()).allScreensStyle()
     }
 }

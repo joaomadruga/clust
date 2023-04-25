@@ -6,14 +6,19 @@
 //
 
 import SwiftUI
+import MultipeerConnectivity
 
 class ListOfTopicsViewModel: ObservableObject {
     var quizUserModel: QuizUserModel
     var topicsModel: TopicsModel
+    @ObservedObject var formGroupViewModel: FormGroupViewModel
+    let currentRoom: RoomModel
     
-    init(searchText: Binding<String>, quizUserModel: QuizUserModel) {
+    init(searchText: Binding<String>, quizUserModel: QuizUserModel, currentRoom: RoomModel, formGroupViewModel: FormGroupViewModel) {
         self.topicsModel = .init(searchText: searchText)
         self.quizUserModel = quizUserModel
+        self.formGroupViewModel = formGroupViewModel
+        self.currentRoom = currentRoom
     }
     
     var searchResults: [String] {
@@ -29,9 +34,28 @@ class ListOfTopicsViewModel: ObservableObject {
     }
     
     func selectCurrentOption(showLoadingScreenView: Binding<Bool>) {
-        quizUserModel.insertLearningTopic(learningTopic: topicsModel.searchText.wrappedValue)
+        self.advertiseQuizUserModel()
         showLoadingScreenView.wrappedValue = true
     }
     
-    
+    func advertiseQuizUserModel() {
+        do {
+            for room in formGroupViewModel.availableRooms {
+                if (room.roomOwner == currentRoom.roomOwner) {
+                    for (memberIndex, member) in room.roomMembers.enumerated() {
+                        print(member.peerID.displayName)
+                        print(formGroupViewModel.peerID.displayName)
+                        if (member.peerID.displayName == formGroupViewModel.peerID.displayName) {
+                            quizUserModel.insertLearningTopic(learningTopic: topicsModel.searchText.wrappedValue)
+                            room.roomMembers[memberIndex] = quizUserModel
+                        }
+                    }
+                    let encodedData = try NSKeyedArchiver.archivedData(withRootObject: room, requiringSecureCoding: true)
+                    try self.formGroupViewModel.session.send(encodedData, toPeers: formGroupViewModel.availablePeers, with: .reliable)
+                }
+            }
+        } catch let error {
+            print("Error sending data: \(error.localizedDescription)")
+        }
+    }
 }

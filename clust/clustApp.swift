@@ -12,9 +12,6 @@ struct clustApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-            /*NavigationStack{
-                MultipeerView()
-            }*/
         }
     }
 }

@@ -6,15 +6,27 @@
 //
 
 import SwiftUI
+import Combine
 
 struct LoadingScreenView: View {
     let globalStyle: GlobalStyle
     let text: String
     let destinationScreen: any View
+    let prevScreen: String
+    var currentRoom: RoomModel
+    @ObservedObject var formGroupViewModel: FormGroupViewModel
+    @StateObject var viewModel: LoadingScreenViewModel
+    @State var showNextView: Bool = false
     
-    @State var timeRemaining = 5
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @State var showNextScreen: Bool = false
+    init(globalStyle: GlobalStyle, text: String, destinationScreen: any View, formGroupViewModel: FormGroupViewModel, currentRoom: RoomModel, prevScreen: String) {
+        self.globalStyle = globalStyle
+        self.text = text
+        self.destinationScreen = destinationScreen
+        self.formGroupViewModel = formGroupViewModel
+        self.currentRoom = currentRoom
+        self.prevScreen = prevScreen
+        self._viewModel = StateObject(wrappedValue: LoadingScreenViewModel(formGroupViewModel: formGroupViewModel, currentRoom: currentRoom))
+    }
     
     var body: some View {
         VStack {
@@ -30,21 +42,28 @@ struct LoadingScreenView: View {
             Spacer()
             Image("GrayIcon")
         }
-        .onReceive(timer) { _ in
-            if timeRemaining > 0 {
-                timeRemaining -= 1
-            } else {
-                showNextScreen = true
-            }
-        }
-        .navigationDestination(isPresented: $showNextScreen) {
+        .navigationDestination(isPresented: $showNextView) {
             AnyView(destinationScreen).allScreensStyle()
+        }
+        .onReceive(Just(formGroupViewModel.availableRooms)) { availableRooms in
+            // this works properly
+            print("opa macacos me mordam recebi uma nova sala")
+            print(prevScreen)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                if (prevScreen == "ChooseTopicView") {
+                    showNextView = !viewModel.waitArea()
+                } else if (prevScreen == "ChooseTopThreeTopicsView") {
+                    showNextView = !viewModel.waitListOfTopics()
+                } else if (prevScreen == "MentorWaitRoomView") {
+                    showNextView = !viewModel.waitFormGroups()
+                }
+            }
         }
     }
 }
 
 struct LoadingScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        LoadingScreenView(globalStyle: .init(), text: "Por favor, aguarde todos resolverem suas crises existenciais enquanto pensam no tema. 🫂💭", destinationScreen: EmptyView()).allScreensStyle()
+        LoadingScreenView(globalStyle: .init(), text: .init(), destinationScreen: EmptyView(), formGroupViewModel: .init(), currentRoom: .init(roomOwner: .init(), defineArea: .init(), roomOwnerName: .init()), prevScreen: "ChooseTopicView").allScreensStyle()
     }
 }

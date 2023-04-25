@@ -13,7 +13,7 @@ class UserModel {
     
     init(loginModel: LoginModel, isStudent: Bool) {
         self.loginModel = loginModel
-        self.isStudent = isStudent
+        
     }
     
 }

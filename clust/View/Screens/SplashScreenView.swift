@@ -10,6 +10,7 @@ import SwiftUI
 struct SplashScreenView: View {
     let globalStyle: GlobalStyle
     
+    var viewModel = SplashScreenViewModel()
     @State var changeBackgroundTimer = 1.2
     @State var currentBackground: Color = GlobalStyle().mainGreen
 
@@ -42,7 +43,12 @@ struct SplashScreenView: View {
                 }
         }
         .navigationDestination(isPresented: $isOver) {
-            AnyView(StartScreenView(globalStyle: globalStyle)).allScreensStyle()
+            if (viewModel.loginModel.isLogged) {
+                AnyView(FormGroupView(globalStyle: globalStyle, loginModel: viewModel.loginModel)).allScreensStyle()
+            } else {
+                AnyView(StartScreenView(globalStyle: globalStyle, loginModel: viewModel.loginModel)).allScreensStyle()
+            }
+            
         }
     }
 }

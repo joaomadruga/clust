@@ -11,12 +11,18 @@ struct QuizMembersNumberView: View {
     let globalStyle: GlobalStyle
     @State var membersNumber: String
     var viewModel: QuizMembersNumberViewModel
+    var currentRoom: RoomModel
+    @ObservedObject var formGroupViewModel: FormGroupViewModel
+    @ObservedObject var quizUserModel: QuizUserModel
     
     
-    init(globalStyle: GlobalStyle) {
+    init(globalStyle: GlobalStyle, quizUserModel: QuizUserModel, currentRoom: RoomModel, formGroupViewModel: FormGroupViewModel) {
         self.globalStyle = globalStyle
         self.membersNumber = ""
-        self.viewModel = .init()
+        self.viewModel = .init(QuizUserModel: quizUserModel)
+        self.currentRoom = currentRoom
+        self.formGroupViewModel = formGroupViewModel
+        self.quizUserModel = quizUserModel
     }
     
     
@@ -36,8 +42,8 @@ struct QuizMembersNumberView: View {
             
             Spacer()
             
-            MainButtonView(globalStyle: globalStyle, destinationScreen: ChooseAreaView(globalStyle: globalStyle, QuizUserModel: viewModel.QuizUserModel), backButtonText: "Sair", buttonAction: {
-                viewModel.onClickButton(numberOfGroupMembers:  membersNumber)
+            MainButtonView(globalStyle: globalStyle, destinationScreen: ChooseAreaView(globalStyle: globalStyle, quizUserModel: viewModel.QuizUserModel, currentRoom: currentRoom, formGroupViewModel: formGroupViewModel), backButtonText: "Sair", buttonAction: {
+                viewModel.onClickButton(numberOfGroupMembers: membersNumber)
             })
         }
     }
@@ -46,7 +52,7 @@ struct QuizMembersNumberView: View {
 
 struct QuizMembersNumberView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizMembersNumberView(globalStyle: .init()).allScreensStyle()
+        QuizMembersNumberView(globalStyle: .init(), quizUserModel: .init(peerID: .init()), currentRoom: .init(roomOwner: .init(), defineArea: .init(), roomOwnerName: .init()), formGroupViewModel: .init()).allScreensStyle()
     }
 }
 

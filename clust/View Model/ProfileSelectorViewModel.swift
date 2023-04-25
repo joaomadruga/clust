@@ -12,9 +12,8 @@ extension ProfileSelectorView {
         // It's mocked since i did not discovered how to enable apple sign in auth in simulator.
         @Published var isStudentButtonChecked:Bool = true
         
-        func createUserModel(loginModel: LoginModel) -> UserModel {
-            let userModel:UserModel = .init(loginModel: loginModel, isStudent: self.isStudentButtonChecked)
-            return userModel
+        func setLoginModel(loginModel: LoginModel) {
+            loginModel.isStudent = isStudentButtonChecked
         }
     }
 }

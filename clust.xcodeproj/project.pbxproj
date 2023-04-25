@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		93095B2629E391B500FFBFC0 /* RoomsViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93095B2529E391B500FFBFC0 /* RoomsViewExample.swift */; };
-		93095B2829E392DF00FFBFC0 /* RoomsViewModelExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93095B2729E392DF00FFBFC0 /* RoomsViewModelExample.swift */; };
 		93095B2C29E3B54F00FFBFC0 /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93095B2B29E3B54F00FFBFC0 /* RoomModel.swift */; };
 		932F49C029C6141F005C535C /* CreateProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F49BF29C6141F005C535C /* CreateProfileViewModel.swift */; };
 		932F49C229C64139005C535C /* ProfileSelectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F49C129C64139005C535C /* ProfileSelectorViewModel.swift */; };
@@ -20,7 +18,6 @@
 		932FA94A29C568CD004E28AC /* ProfileSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932FA94929C568CD004E28AC /* ProfileSelectorView.swift */; };
 		932FA94C29C56E95004E28AC /* GlobalStyleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932FA94B29C56E95004E28AC /* GlobalStyleModel.swift */; };
 		932FA94E29C584B7004E28AC /* ButtonUserTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932FA94D29C584B7004E28AC /* ButtonUserTypeView.swift */; };
-		932FA95229C58E0F004E28AC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932FA95129C58E0F004E28AC /* UserModel.swift */; };
 		934827B729F0C75C009FBF00 /* ActiveRoomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934827B629F0C75C009FBF00 /* ActiveRoomCardView.swift */; };
 		934827B929F0C792009FBF00 /* FormGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934827B829F0C792009FBF00 /* FormGroupView.swift */; };
 		934827BB29F0C7ED009FBF00 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934827BA29F0C7ED009FBF00 /* SplashScreenView.swift */; };
@@ -30,14 +27,28 @@
 		934827C429F0CA58009FBF00 /* CreateRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934827C329F0CA58009FBF00 /* CreateRoomView.swift */; };
 		934827C629F0CAA0009FBF00 /* ListOfPeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934827C529F0CAA0009FBF00 /* ListOfPeopleView.swift */; };
 		934827C829F0CBEB009FBF00 /* ListOfMembersScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934827C729F0CBEB009FBF00 /* ListOfMembersScreenView.swift */; };
+		934827CA29F21398009FBF00 /* JoinedRoomScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934827C929F21398009FBF00 /* JoinedRoomScreenView.swift */; };
+		934827CC29F21DDD009FBF00 /* JoinedRoomScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934827CB29F21DDD009FBF00 /* JoinedRoomScreenViewModel.swift */; };
+		934827CE29F2C8AC009FBF00 /* SplashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934827CD29F2C8AC009FBF00 /* SplashScreenViewModel.swift */; };
+		934827D029F2CDEF009FBF00 /* RoundedMemojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934827CF29F2CDEF009FBF00 /* RoundedMemojiView.swift */; };
+		934827D229F2DFFD009FBF00 /* FormGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934827D129F2DFFD009FBF00 /* FormGroupViewModel.swift */; };
+		934827D429F2E0DA009FBF00 /* MentorWaitRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934827D329F2E0D9009FBF00 /* MentorWaitRoomView.swift */; };
+		934827D629F2E0EE009FBF00 /* MentorWaitRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934827D529F2E0EE009FBF00 /* MentorWaitRoomViewModel.swift */; };
+		934827D829F2E256009FBF00 /* CreateRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934827D729F2E255009FBF00 /* CreateRoomViewModel.swift */; };
+		93525ACD29F78BE60037913D /* MentorAllGroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93525ACC29F78BE60037913D /* MentorAllGroupsView.swift */; };
+		93525ACF29F78C010037913D /* GroupMembersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93525ACE29F78C010037913D /* GroupMembersView.swift */; };
+		93525AD129F78C060037913D /* IndividualMemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93525AD029F78C060037913D /* IndividualMemberView.swift */; };
+		93525AD329F793C60037913D /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93525AD229F793C60037913D /* GroupModel.swift */; };
 		9357979129C8E340005E81DB /* ChooseAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357979029C8E340005E81DB /* ChooseAreaView.swift */; };
 		9357979329C8E567005E81DB /* ListOfSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357979229C8E567005E81DB /* ListOfSelectionView.swift */; };
 		9357979529C8E633005E81DB /* ListOfSelectionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357979429C8E633005E81DB /* ListOfSelectionsViewModel.swift */; };
+		937B771229F3841500BBD805 /* TabUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937B771129F3841500BBD805 /* TabUsersView.swift */; };
 		937DD64A29C3FF860042BC4B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937DD64929C3FF860042BC4B /* ContentView.swift */; };
 		938AF6C929D7D5460027F03A /* MemojiSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938AF6C829D7D5460027F03A /* MemojiSelectorView.swift */; };
 		938AF6CB29D878D10027F03A /* ProfileColorButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938AF6CA29D878D10027F03A /* ProfileColorButtonView.swift */; };
 		938AF6CD29D8804A0027F03A /* CreateProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938AF6CC29D880490027F03A /* CreateProfileView.swift */; };
 		938AF6CF29D890C20027F03A /* CurrentCheckedColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938AF6CE29D890C20027F03A /* CurrentCheckedColorModel.swift */; };
+		938E53D429F746FF00AD0DDD /* LoadingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E53D329F746FF00AD0DDD /* LoadingScreenViewModel.swift */; };
 		93A740B129D736AE00457159 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93A740B029D736AE00457159 /* Assets.xcassets */; };
 		93CDADA229DB6FE500F84E38 /* LoadingScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CDADA129DB6FE500F84E38 /* LoadingScreenView.swift */; };
 		93CDADA429DB751A00F84E38 /* LightGreenButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CDADA329DB751A00F84E38 /* LightGreenButtonView.swift */; };
@@ -60,8 +71,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		93095B2529E391B500FFBFC0 /* RoomsViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsViewExample.swift; sourceTree = "<group>"; };
-		93095B2729E392DF00FFBFC0 /* RoomsViewModelExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsViewModelExample.swift; sourceTree = "<group>"; };
 		93095B2B29E3B54F00FFBFC0 /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
 		932F49BF29C6141F005C535C /* CreateProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileViewModel.swift; sourceTree = "<group>"; };
 		932F49C129C64139005C535C /* ProfileSelectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSelectorViewModel.swift; sourceTree = "<group>"; };
@@ -73,7 +82,6 @@
 		932FA94929C568CD004E28AC /* ProfileSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSelectorView.swift; sourceTree = "<group>"; };
 		932FA94B29C56E95004E28AC /* GlobalStyleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStyleModel.swift; sourceTree = "<group>"; };
 		932FA94D29C584B7004E28AC /* ButtonUserTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonUserTypeView.swift; sourceTree = "<group>"; };
-		932FA95129C58E0F004E28AC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		934827B629F0C75C009FBF00 /* ActiveRoomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveRoomCardView.swift; sourceTree = "<group>"; };
 		934827B829F0C792009FBF00 /* FormGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormGroupView.swift; sourceTree = "<group>"; };
 		934827BA29F0C7ED009FBF00 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
@@ -82,15 +90,29 @@
 		934827C329F0CA58009FBF00 /* CreateRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomView.swift; sourceTree = "<group>"; };
 		934827C529F0CAA0009FBF00 /* ListOfPeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfPeopleView.swift; sourceTree = "<group>"; };
 		934827C729F0CBEB009FBF00 /* ListOfMembersScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfMembersScreenView.swift; sourceTree = "<group>"; };
+		934827C929F21398009FBF00 /* JoinedRoomScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinedRoomScreenView.swift; sourceTree = "<group>"; };
+		934827CB29F21DDD009FBF00 /* JoinedRoomScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinedRoomScreenViewModel.swift; sourceTree = "<group>"; };
+		934827CD29F2C8AC009FBF00 /* SplashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModel.swift; sourceTree = "<group>"; };
+		934827CF29F2CDEF009FBF00 /* RoundedMemojiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedMemojiView.swift; sourceTree = "<group>"; };
+		934827D129F2DFFD009FBF00 /* FormGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormGroupViewModel.swift; sourceTree = "<group>"; };
+		934827D329F2E0D9009FBF00 /* MentorWaitRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorWaitRoomView.swift; sourceTree = "<group>"; };
+		934827D529F2E0EE009FBF00 /* MentorWaitRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorWaitRoomViewModel.swift; sourceTree = "<group>"; };
+		934827D729F2E255009FBF00 /* CreateRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomViewModel.swift; sourceTree = "<group>"; };
+		93525ACC29F78BE60037913D /* MentorAllGroupsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentorAllGroupsView.swift; sourceTree = "<group>"; };
+		93525ACE29F78C010037913D /* GroupMembersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMembersView.swift; sourceTree = "<group>"; };
+		93525AD029F78C060037913D /* IndividualMemberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualMemberView.swift; sourceTree = "<group>"; };
+		93525AD229F793C60037913D /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 		9357979029C8E340005E81DB /* ChooseAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAreaView.swift; sourceTree = "<group>"; };
 		9357979229C8E567005E81DB /* ListOfSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfSelectionView.swift; sourceTree = "<group>"; };
 		9357979429C8E633005E81DB /* ListOfSelectionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfSelectionsViewModel.swift; sourceTree = "<group>"; };
+		937B771129F3841500BBD805 /* TabUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabUsersView.swift; sourceTree = "<group>"; };
 		937DD64429C3FF860042BC4B /* clust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clust.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		937DD64929C3FF860042BC4B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		938AF6C829D7D5460027F03A /* MemojiSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemojiSelectorView.swift; sourceTree = "<group>"; };
 		938AF6CA29D878D10027F03A /* ProfileColorButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileColorButtonView.swift; sourceTree = "<group>"; };
 		938AF6CC29D880490027F03A /* CreateProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileView.swift; sourceTree = "<group>"; };
 		938AF6CE29D890C20027F03A /* CurrentCheckedColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCheckedColorModel.swift; sourceTree = "<group>"; };
+		938E53D329F746FF00AD0DDD /* LoadingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenViewModel.swift; sourceTree = "<group>"; };
 		93A740B029D736AE00457159 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93CDADA129DB6FE500F84E38 /* LoadingScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenView.swift; sourceTree = "<group>"; };
 		93CDADA329DB751A00F84E38 /* LightGreenButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightGreenButtonView.swift; sourceTree = "<group>"; };
@@ -131,12 +153,12 @@
 			children = (
 				932FA94529C41049004E28AC /* LoginModel.swift */,
 				932FA94B29C56E95004E28AC /* GlobalStyleModel.swift */,
-				932FA95129C58E0F004E28AC /* UserModel.swift */,
 				93EEE53629C92DEA00A04DD9 /* OptionModel.swift */,
 				93D56D7829CB8DA900313019 /* QuizUserModel.swift */,
 				93D56D8129CF9DB200313019 /* TopicsModel.swift */,
 				938AF6CE29D890C20027F03A /* CurrentCheckedColorModel.swift */,
 				93095B2B29E3B54F00FFBFC0 /* RoomModel.swift */,
+				93525AD229F793C60037913D /* GroupModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -151,7 +173,12 @@
 				93D56D7A29CB8F6800313019 /* QuizMembersNumberViewModel.swift */,
 				93D56D8729CFC67800313019 /* ListOfTopicsViewModel.swift */,
 				93CDADA929DBA3FB00F84E38 /* ChooseTopThreeTopicsViewModel.swift */,
-				93095B2729E392DF00FFBFC0 /* RoomsViewModelExample.swift */,
+				934827CB29F21DDD009FBF00 /* JoinedRoomScreenViewModel.swift */,
+				934827CD29F2C8AC009FBF00 /* SplashScreenViewModel.swift */,
+				934827D129F2DFFD009FBF00 /* FormGroupViewModel.swift */,
+				934827D529F2E0EE009FBF00 /* MentorWaitRoomViewModel.swift */,
+				934827D729F2E255009FBF00 /* CreateRoomViewModel.swift */,
+				938E53D329F746FF00AD0DDD /* LoadingScreenViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -199,6 +226,8 @@
 		93CDADA729DB9DBE00F84E38 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				93525AD029F78C060037913D /* IndividualMemberView.swift */,
+				93525ACE29F78C010037913D /* GroupMembersView.swift */,
 				932FA94D29C584B7004E28AC /* ButtonUserTypeView.swift */,
 				932F49C329C64CA6005C535C /* MainButtonView.swift */,
 				932F49C529C6CEB8005C535C /* HeaderTitleView.swift */,
@@ -215,6 +244,8 @@
 				934827B629F0C75C009FBF00 /* ActiveRoomCardView.swift */,
 				934827BC29F0C841009FBF00 /* LottieView.swift */,
 				934827C529F0CAA0009FBF00 /* ListOfPeopleView.swift */,
+				934827CF29F2CDEF009FBF00 /* RoundedMemojiView.swift */,
+				937B771129F3841500BBD805 /* TabUsersView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -231,11 +262,13 @@
 				938AF6CC29D880490027F03A /* CreateProfileView.swift */,
 				93CDADA129DB6FE500F84E38 /* LoadingScreenView.swift */,
 				93CDADA529DB9DB800F84E38 /* ChooseTopThreeTopicsView.swift */,
-				93095B2529E391B500FFBFC0 /* RoomsViewExample.swift */,
 				934827B829F0C792009FBF00 /* FormGroupView.swift */,
 				934827BA29F0C7ED009FBF00 /* SplashScreenView.swift */,
 				934827C329F0CA58009FBF00 /* CreateRoomView.swift */,
 				934827C729F0CBEB009FBF00 /* ListOfMembersScreenView.swift */,
+				934827C929F21398009FBF00 /* JoinedRoomScreenView.swift */,
+				934827D329F2E0D9009FBF00 /* MentorWaitRoomView.swift */,
+				93525ACC29F78BE60037913D /* MentorAllGroupsView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -320,14 +353,19 @@
 				9357979129C8E340005E81DB /* ChooseAreaView.swift in Sources */,
 				93CDADAA29DBA3FB00F84E38 /* ChooseTopThreeTopicsViewModel.swift in Sources */,
 				93D56D8829CFC67800313019 /* ListOfTopicsViewModel.swift in Sources */,
+				934827D829F2E256009FBF00 /* CreateRoomViewModel.swift in Sources */,
+				93525ACF29F78C010037913D /* GroupMembersView.swift in Sources */,
+				934827D029F2CDEF009FBF00 /* RoundedMemojiView.swift in Sources */,
+				934827CC29F21DDD009FBF00 /* JoinedRoomScreenViewModel.swift in Sources */,
 				93EEE53929C936BD00A04DD9 /* SelectionButtonView.swift in Sources */,
 				932FA94129C40925004E28AC /* StartScreenView.swift in Sources */,
 				93D56D8629CFC57300313019 /* SelectionTopicView.swift in Sources */,
 				93EEE53729C92DEA00A04DD9 /* OptionModel.swift in Sources */,
-				932FA95229C58E0F004E28AC /* UserModel.swift in Sources */,
 				934827BB29F0C7ED009FBF00 /* SplashScreenView.swift in Sources */,
+				937B771229F3841500BBD805 /* TabUsersView.swift in Sources */,
 				9357979329C8E567005E81DB /* ListOfSelectionView.swift in Sources */,
 				932F49C629C6CEB8005C535C /* HeaderTitleView.swift in Sources */,
+				934827CE29F2C8AC009FBF00 /* SplashScreenViewModel.swift in Sources */,
 				932F49C429C64CA6005C535C /* MainButtonView.swift in Sources */,
 				934827B729F0C75C009FBF00 /* ActiveRoomCardView.swift in Sources */,
 				93D56D7F29CF470B00313019 /* ChooseTopicView.swift in Sources */,
@@ -338,32 +376,38 @@
 				93D56D8A29D2735F00313019 /* FindTopicView.swift in Sources */,
 				938AF6C929D7D5460027F03A /* MemojiSelectorView.swift in Sources */,
 				932FA94629C41049004E28AC /* LoginModel.swift in Sources */,
+				93525ACD29F78BE60037913D /* MentorAllGroupsView.swift in Sources */,
 				932F49C829C6D163005C535C /* QuizMembersNumberView.swift in Sources */,
+				934827CA29F21398009FBF00 /* JoinedRoomScreenView.swift in Sources */,
+				934827D429F2E0DA009FBF00 /* MentorWaitRoomView.swift in Sources */,
+				934827D229F2DFFD009FBF00 /* FormGroupViewModel.swift in Sources */,
 				93CDC2FB29D734990043FD59 /* clustApp.swift in Sources */,
 				938AF6CD29D8804A0027F03A /* CreateProfileView.swift in Sources */,
 				93D56D8C29D3D88400313019 /* MemojiInputView.swift in Sources */,
 				934827C629F0CAA0009FBF00 /* ListOfPeopleView.swift in Sources */,
 				932FA94C29C56E95004E28AC /* GlobalStyleModel.swift in Sources */,
 				93D56D7929CB8DA900313019 /* QuizUserModel.swift in Sources */,
-				93095B2629E391B500FFBFC0 /* RoomsViewExample.swift in Sources */,
 				932F49C029C6141F005C535C /* CreateProfileViewModel.swift in Sources */,
 				934827C429F0CA58009FBF00 /* CreateRoomView.swift in Sources */,
-				93095B2829E392DF00FFBFC0 /* RoomsViewModelExample.swift in Sources */,
 				932F49C229C64139005C535C /* ProfileSelectorViewModel.swift in Sources */,
 				932FA94E29C584B7004E28AC /* ButtonUserTypeView.swift in Sources */,
 				934827BD29F0C841009FBF00 /* LottieView.swift in Sources */,
 				9357979529C8E633005E81DB /* ListOfSelectionsViewModel.swift in Sources */,
 				93D56D7B29CB8F6800313019 /* QuizMembersNumberViewModel.swift in Sources */,
+				93525AD129F78C060037913D /* IndividualMemberView.swift in Sources */,
 				932FA94A29C568CD004E28AC /* ProfileSelectorView.swift in Sources */,
 				938AF6CB29D878D10027F03A /* ProfileColorButtonView.swift in Sources */,
 				93CDADA429DB751A00F84E38 /* LightGreenButtonView.swift in Sources */,
 				93D56D7729CABC3B00313019 /* BackButtonView.swift in Sources */,
 				934827B929F0C792009FBF00 /* FormGroupView.swift in Sources */,
+				934827D629F2E0EE009FBF00 /* MentorWaitRoomViewModel.swift in Sources */,
 				937DD64A29C3FF860042BC4B /* ContentView.swift in Sources */,
 				93CDADA229DB6FE500F84E38 /* LoadingScreenView.swift in Sources */,
 				938AF6CF29D890C20027F03A /* CurrentCheckedColorModel.swift in Sources */,
+				93525AD329F793C60037913D /* GroupModel.swift in Sources */,
 				93CDADA629DB9DB800F84E38 /* ChooseTopThreeTopicsView.swift in Sources */,
 				93D56D8229CF9DB200313019 /* TopicsModel.swift in Sources */,
+				938E53D429F746FF00AD0DDD /* LoadingScreenViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
