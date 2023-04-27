@@ -29,7 +29,11 @@ struct MentorWaitRoomView: View {
     var body: some View {
         VStack {
             HeaderTitleView(text: currentRoom.roomName)
+            
             Text("Aguardando entrada de participantes. A sala aparecerá para os estudantes conectados na mesma rede WiFi.")
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.top, -20)
+                .foregroundColor(globalStyle.systemGrey2)
             
             TabUsersView(globalStyle: globalStyle, currentRoom: currentRoom)
             
@@ -39,6 +43,7 @@ struct MentorWaitRoomView: View {
                 viewModel.advertiseStartQuiz(room: currentRoom)
             }, buttonText: "Iniciar formação de equipes")
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 

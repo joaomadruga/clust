@@ -19,31 +19,38 @@ struct TabUsersView: View {
     
     var body: some View {
         TabView {
-            ForEach(Array(stride(from: 0, to: currentRoom.roomMembers.count, by: 12)), id: \.self) { index in
-                VStack {
-                    LazyVGrid(columns: rows, spacing: 16) {
-                        if currentRoom.roomMembers.count - index > 12 {
-                            ForEach(Array(stride(from: 0, to: 12, by: 1)), id: \.self) { secondIndex in
-                                VStack {
-                                    RoundedMemojiView(base64String: currentRoom.roomMembers[secondIndex].memoji, backgroundIndex: Int.random(in: 0..<7), width: 40, height: 40)
-                                    Text("\(currentRoom.roomMembers[secondIndex].name)")
-                                        .font(.subheadline)
+            if (currentRoom.roomMembers.count > 0) {
+                ForEach(Array(stride(from: 0, to: currentRoom.roomMembers.count, by: 12)), id: \.self) { index in
+                    VStack {
+                        LazyVGrid(columns: rows, spacing: 16) {
+                            if currentRoom.roomMembers.count - index > 12 {
+                                ForEach(Array(stride(from: 0, to: 12, by: 1)), id: \.self) { secondIndex in
+                                    VStack {
+                                        RoundedMemojiView(base64String: currentRoom.roomMembers[secondIndex].memoji, backgroundIndex: Int.random(in: 0..<7), width: 40, height: 40)
+                                        Text("\(currentRoom.roomMembers[secondIndex].name)")
+                                            .font(.subheadline)
+                                    }
                                 }
-                            }
-                        } else {
-                            ForEach(Array(stride(from: 0, to: currentRoom.roomMembers.count - index, by: 1)), id: \.self) { secondIndex in
-                                VStack {
-                                    RoundedMemojiView(base64String: currentRoom.roomMembers[secondIndex].memoji, backgroundIndex: Int.random(in: 0..<7), width: 40, height: 40)
-                                    Text("\(currentRoom.roomMembers[secondIndex].name)")
-                                        .font(.subheadline)
+                            } else {
+                                ForEach(Array(stride(from: 0, to: currentRoom.roomMembers.count - index, by: 1)), id: \.self) { secondIndex in
+                                    VStack {
+                                        RoundedMemojiView(base64String: currentRoom.roomMembers[secondIndex].memoji, backgroundIndex: Int.random(in: 0..<7), width: 40, height: 40)
+                                        Text("\(currentRoom.roomMembers[secondIndex].name)")
+                                            .font(.subheadline)
+                                    }
+                                    
                                 }
-                                
                             }
                         }
+                        Spacer()
                     }
-                    Spacer()
+                    .padding(32)
                 }
-                .padding(32)
+            } else {
+                Text("Aguardando entrada de participantes...")
+                    .padding(60)
+                    .foregroundColor(globalStyle.systemGrey2)
+                    .multilineTextAlignment(.center)
             }
         }
         .frame(maxHeight: 450)

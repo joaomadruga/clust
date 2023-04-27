@@ -9,18 +9,17 @@ import SwiftUI
 
 struct IndividualMemberView: View {
     let globalStyle: GlobalStyle
-    let userName: String //= "Name"
-    let userDescription: String = "Quer focar em Design e tem interesse em explorar WatchOS, AI e Gestures"
+    let memberModel: QuizUserModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8){
-            Circle().frame(width: 48) //replace for rounded memoji
-            Text(userName).fontWeight(.medium)
-            Text(userDescription).foregroundColor(globalStyle.systemGrey2).font(.footnote)
+            RoundedMemojiView(base64String: memberModel.memoji, backgroundIndex: Int.random(in: 0..<7), width: 48, height: 48)
+            Text(memberModel.name).fontWeight(.medium)
+            Text("Quer focar em \(memberModel.learningArea) e tem interesse em explorar \(memberModel.listOfPreferredTopics[0]), \(memberModel.listOfPreferredTopics[1]) e \(memberModel.listOfPreferredTopics[2])").foregroundColor(globalStyle.systemGrey2).font(.footnote)
             Spacer()
         }
-        .padding(24)
-        .frame(width: 180, height: 240)
+        .padding(16)
+        .frame(width: 180, height: 210)
         .background(globalStyle.systemGrey6)
         .cornerRadius(24)
     }
@@ -28,6 +27,6 @@ struct IndividualMemberView: View {
 
 struct IndividualMemberView_Previews: PreviewProvider {
     static var previews: some View {
-        IndividualMemberView(globalStyle: .init(), userName: "Teste")
+        IndividualMemberView(globalStyle: .init(), memberModel: .init(peerID: .init()))
     }
 }

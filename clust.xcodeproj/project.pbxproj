@@ -42,6 +42,7 @@
 		9357979129C8E340005E81DB /* ChooseAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357979029C8E340005E81DB /* ChooseAreaView.swift */; };
 		9357979329C8E567005E81DB /* ListOfSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357979229C8E567005E81DB /* ListOfSelectionView.swift */; };
 		9357979529C8E633005E81DB /* ListOfSelectionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357979429C8E633005E81DB /* ListOfSelectionsViewModel.swift */; };
+		9372622229F95C9500F24F36 /* FormedGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9372622129F95C9500F24F36 /* FormedGroupView.swift */; };
 		937B771229F3841500BBD805 /* TabUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937B771129F3841500BBD805 /* TabUsersView.swift */; };
 		937DD64A29C3FF860042BC4B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937DD64929C3FF860042BC4B /* ContentView.swift */; };
 		938AF6C929D7D5460027F03A /* MemojiSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938AF6C829D7D5460027F03A /* MemojiSelectorView.swift */; };
@@ -105,6 +106,7 @@
 		9357979029C8E340005E81DB /* ChooseAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAreaView.swift; sourceTree = "<group>"; };
 		9357979229C8E567005E81DB /* ListOfSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfSelectionView.swift; sourceTree = "<group>"; };
 		9357979429C8E633005E81DB /* ListOfSelectionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfSelectionsViewModel.swift; sourceTree = "<group>"; };
+		9372622129F95C9500F24F36 /* FormedGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormedGroupView.swift; sourceTree = "<group>"; };
 		937B771129F3841500BBD805 /* TabUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabUsersView.swift; sourceTree = "<group>"; };
 		937DD64429C3FF860042BC4B /* clust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clust.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		937DD64929C3FF860042BC4B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				934827C929F21398009FBF00 /* JoinedRoomScreenView.swift */,
 				934827D329F2E0D9009FBF00 /* MentorWaitRoomView.swift */,
 				93525ACC29F78BE60037913D /* MentorAllGroupsView.swift */,
+				9372622129F95C9500F24F36 /* FormedGroupView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				93D56D8829CFC67800313019 /* ListOfTopicsViewModel.swift in Sources */,
 				934827D829F2E256009FBF00 /* CreateRoomViewModel.swift in Sources */,
 				93525ACF29F78C010037913D /* GroupMembersView.swift in Sources */,
+				9372622229F95C9500F24F36 /* FormedGroupView.swift in Sources */,
 				934827D029F2CDEF009FBF00 /* RoundedMemojiView.swift in Sources */,
 				934827CC29F21DDD009FBF00 /* JoinedRoomScreenViewModel.swift in Sources */,
 				93EEE53929C936BD00A04DD9 /* SelectionButtonView.swift in Sources */,
@@ -539,11 +543,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"clust/Preview Content\"";
-				DEVELOPMENT_TEAM = CYNLP8GG6M;
+				DEVELOPMENT_TEAM = R9CDFDQY98;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = clust/Info.plist;
-				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Rooms creation and sharing";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Usa seu dispositivo para reconhecer as salas e outros alunos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -554,7 +558,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.clust;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cluster.clust;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -571,11 +575,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"clust/Preview Content\"";
-				DEVELOPMENT_TEAM = CYNLP8GG6M;
+				DEVELOPMENT_TEAM = R9CDFDQY98;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = clust/Info.plist;
-				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Rooms creation and sharing";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Usa seu dispositivo para reconhecer as salas e outros alunos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -586,7 +590,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.clust;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cluster.clust;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

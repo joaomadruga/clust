@@ -12,6 +12,8 @@ struct MentorAllGroupsView: View {
     let formGroupViewModel: FormGroupViewModel
     let room: RoomModel
     
+    @ObservedObject var splashScreenViewModel: SplashScreenViewModel = .init()
+    
     init(globalStyle: GlobalStyle, formGroupViewModel: FormGroupViewModel, currentRoom: RoomModel) {
         self.globalStyle = globalStyle
         self.formGroupViewModel = formGroupViewModel
@@ -21,10 +23,11 @@ struct MentorAllGroupsView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
-                Text("Equipes Formadas").font(.headline).padding(16)
+                HeaderTitleView(text: "Equipes Formadas")
                 ForEach (Array(room.listOfGroups.enumerated()), id: \.offset) { groupIndex, group in
                     GroupMembersView(globalStyle: .init(), groupName: "EQUIPE \(groupIndex + 1)", group: group)
                 }
+                MainButtonView(globalStyle: globalStyle, destinationScreen: FormGroupView(globalStyle: globalStyle, loginModel: splashScreenViewModel.loginModel), backButtonText: "", buttonAction: {}, buttonText: "Voltar para o início")
             }
         }
     }

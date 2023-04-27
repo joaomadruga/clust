@@ -15,16 +15,15 @@ struct GroupMembersView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(groupName)
+                .font(.callout)
+                .foregroundColor(globalStyle.systemGrey2)
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack{
                     ForEach(group.members, id: \.self.hashValue) { member in
-                        IndividualMemberView(globalStyle: .init(), userName: member.name)
+                        IndividualMemberView(globalStyle: .init(), memberModel: member)
                         .padding(.bottom, 16)}
                 }
             }
-        }
-        .onAppear() {
-            print(group.members)
         }
     }
 }

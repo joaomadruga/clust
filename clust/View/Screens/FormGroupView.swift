@@ -9,7 +9,6 @@ import SwiftUI
 struct FormGroupView: View {
     let globalStyle: GlobalStyle
     let loginModel: LoginModel
-    let listOfChallenges: [String] = ["Foundations", "Pear", "Paris", "Teste"]
     @State private var selected = 0
     @StateObject var viewModel = FormGroupViewModel()
 
@@ -39,7 +38,7 @@ struct FormGroupView: View {
             .padding(.bottom, 16)
 
             if selected == 0 {
-                if viewModel.availableRooms.count > 0 {
+                if viewModel.availableRooms.filter({ return $0.isRoomOpen }).count > 0 {
                     ScrollView() {
                         ForEach(viewModel.availableRooms, id: \.self.hashValue) { room in
                             ActiveRoomCardView(globalStyle: globalStyle, room: room, userMemoji: loginModel.profileImage, userName: loginModel.name)
@@ -59,7 +58,10 @@ struct FormGroupView: View {
                     Spacer()
                 }
             } else {
-                Text("View 2")
+                Text("Você ainda não participou de nenhuma sala de formação de equipe.")
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(globalStyle.systemGrey2)
+                    .padding(.top, 8)
                 Spacer()
                 }
             }

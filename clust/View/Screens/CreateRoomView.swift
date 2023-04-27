@@ -29,40 +29,43 @@ struct CreateRoomView: View {
                 HeaderTitleView(text: "Criar nova sala de formação de equipes")
                 Text("Ao iniciar uma sala de formação de equipes, todos os participantes que estão na mesma rede Wi-Fi poderão ingressar.")
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.system(size: 22))
+                    .font(.body)
                     .foregroundColor(globalStyle.systemGrey3)
                     .padding(EdgeInsets(top: -16, leading: 0, bottom: 16, trailing: 0))
-                TextField("Nome da Challenge", text: $challenge)
-                .padding(14)
-                .font(.system(size: 22))
+                
+                TextField("Nome do Challenge", text: $challenge)
+                .padding(12)
                 .background(globalStyle.inputGrey)
-                .cornerRadius(10)
+                .cornerRadius(12)
 
                 Text("Ex: Challenge Paris")
                     .padding(.leading)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .foregroundColor(globalStyle.systemGrey2)
-                    .padding(.bottom, 18)
-                    .font(.system(size: 18))
+                    .font(.caption)
+                    .padding(.bottom, 16)
                 
                 Toggle(isOn: $defineArea) {
                     Text("Os estudantes precisam definir sua área de atuação?")
                 }
-                .padding(16)
+                .padding(12)
                 .background(globalStyle.inputGrey)
                 .foregroundColor(globalStyle.systemGrey1)
-                .cornerRadius(10)
-                .font(.system(size: 22))
+                .cornerRadius(12)
 
                 Text("Caso não seja necessário, os estudantes não serão categorizados entre desenvolvimento, design e inovação.")
                     .padding(.leading)
+                    .font(.caption)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .foregroundColor(globalStyle.systemGrey2)
-                    .padding(.bottom, 18)
                 
-                MainButtonView(globalStyle: globalStyle, destinationScreen: MentorWaitRoomView(globalStyle: globalStyle, createRoomViewModel: viewModel).allScreensStyle(), backButtonText: "", buttonAction: {
+                Spacer()
+                
+                MainButtonView(globalStyle: globalStyle, destinationScreen: MentorWaitRoomView(globalStyle: globalStyle, createRoomViewModel: viewModel), backButtonText: "", buttonAction: {
                     viewModel.advertiseCreateRoom(roomName: challenge, defineArea: defineArea, roomOwnerName: roomOwnerName)
                 })
+                
+                
             }
         
     }

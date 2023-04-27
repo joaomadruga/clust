@@ -39,11 +39,10 @@ struct ChooseTopThreeTopicsView: View {
                     }
                 }
             }
-            MainButtonView(globalStyle: globalStyle, destinationScreen: LoadingScreenView(globalStyle: globalStyle, text: "Tá bom de lero lero! As equipes já estão sendo formadas. 🏃", destinationScreen: EmptyView(), formGroupViewModel: formGroupViewModel, currentRoom: viewModel.currentRoom, prevScreen: "ChooseTopThreeTopicsView"), backButtonText: "Sair", buttonAction: { viewModel.onClickButton() }, buttonText: "Finalizar")
+            MainButtonView(globalStyle: globalStyle, destinationScreen: LoadingScreenView(globalStyle: globalStyle, text: "Tá bom de lero lero! As equipes já estão sendo formadas. 🏃", destinationScreen: FormedGroupView(globalStyle: globalStyle, formGroupViewModel: formGroupViewModel, currentRoom: formGroupViewModel.availableRooms.first(where: { $0.roomOwner == viewModel.currentRoom.roomOwner }) ?? RoomModel(roomName: "Default", roomOwner: viewModel.currentRoom.roomOwner, defineArea: false, roomOwnerName: "")), formGroupViewModel: formGroupViewModel, currentRoom: viewModel.currentRoom, prevScreen: "ChooseTopThreeTopicsView"), backButtonText: "Sair", buttonAction: { viewModel.onClickButton() }, buttonText: "Finalizar")
         }
         .onAppear() {
             // this works properly
-            print("mudei")
             viewModel.loadListOfSelections()
         }
     }

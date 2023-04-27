@@ -60,9 +60,7 @@ struct ActiveRoomCardView: View {
                     .font(.subheadline)
                     .padding(.bottom, 16)
                 Divider()
-                NavigationLink(destination: AnyView(JoinedRoomScreenView(globalStyle: globalStyle, formGroupViewModel: viewModel, currentRoom: room).environmentObject(viewModel)
-                                                   
-                                                   ).allScreensStyle()) {
+                NavigationLink(destination: AnyView(JoinedRoomScreenView(globalStyle: globalStyle, formGroupViewModel: viewModel, currentRoom: room, userMemoji: userMemoji, userName: userName).environmentObject(viewModel)).allScreensStyle()) {
                     LightGreenButtonView(globalStyle: globalStyle, text: "Entrar na sala")
                         .frame(maxWidth: .infinity)
                         .frame(alignment: .center)

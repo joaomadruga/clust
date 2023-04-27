@@ -13,7 +13,6 @@ class FormGroupViewModel: NSObject, ObservableObject {
     private let serviceType = "rps-service"
     public var peerID: MCPeerID
     
-    
     public let session: MCSession
     public let nearbyServiceAdvertiser: MCNearbyServiceAdvertiser
     public let nearbyServiceBrowser: MCNearbyServiceBrowser
@@ -76,9 +75,6 @@ class FormGroupViewModel: NSObject, ObservableObject {
     func advertiseJoinRoom(room: RoomModel, userMemoji: String, userName: String) {
         let updatedRoom: RoomModel = .init(roomName: room.roomName, roomMembers: room.roomMembers + [QuizUserModel(peerID: peerID, memoji: userMemoji, name: userName)], isRoomOpen: room.isRoomOpen, roomOwner: room.roomOwner, defineArea: room.defineArea, roomOwnerName: room.roomOwnerName)
         
-        print("se for aqui, mostre!")
-        print(updatedRoom.roomMembers)
-        
         var exist = false
         for index in availableRooms.indices {
             if availableRooms[index].roomOwner == updatedRoom.roomOwner {
@@ -99,8 +95,6 @@ class FormGroupViewModel: NSObject, ObservableObject {
     }
     
     func calculteMode(room: RoomModel) -> Int {
-        // [1, 2, 3, 4, 2, 2]
-        // [1: 1, 2: 3, 3: 1, 4: 1]
         var mostRepeatedNumber: Dictionary<Int, Int> = [:]
         var biggestNumber: Int = -1
         
@@ -108,7 +102,7 @@ class FormGroupViewModel: NSObject, ObservableObject {
             if (biggestNumber == -1) {
                 biggestNumber = member.numberOfGroupMembers
             }
-            if (mostRepeatedNumber.contains(where:{ $0.value == member.numberOfGroupMembers})) {
+            if (mostRepeatedNumber.contains(where:{ $0.key == member.numberOfGroupMembers})) {
                 mostRepeatedNumber[member.numberOfGroupMembers]! += 1
                 if (mostRepeatedNumber[member.numberOfGroupMembers]! > mostRepeatedNumber[biggestNumber]!) {
                     biggestNumber = member.numberOfGroupMembers
@@ -123,22 +117,20 @@ class FormGroupViewModel: NSObject, ObservableObject {
     
     func formGroups() -> [GroupModel] {
         // essa função só deve ser rodada pelo lado do mentor
-        // 5 // 2 =
         
         for room in self.availableRooms {
             if (room.roomOwner.displayName == self.peerID.displayName) {
                 let groupSize = self.calculteMode(room: room)
                 print(groupSize)
-                var shuffledMembers = room.roomMembers.shuffled() // shuffle the members array
-                var groups = [GroupModel]() // array to hold the groups
+                var shuffledMembers = room.roomMembers.shuffled()
+                var groups = [GroupModel]()
                 
                 while shuffledMembers.count >= groupSize {
-                    let members = Array(shuffledMembers.prefix(groupSize)) // take the first n members from the shuffled array
-                    groups.append(GroupModel(members: members)) // add the group to the array of groups
-                    shuffledMembers.removeFirst(groupSize) // remove the members that were added to the group
+                    let members = Array(shuffledMembers.prefix(groupSize))
+                    groups.append(GroupModel(members: members))
+                    shuffledMembers.removeFirst(groupSize)
                 }
                 
-                // if there are any remaining members, add them to a group
                 if shuffledMembers.count > 0 {
                     groups.append(GroupModel(members: shuffledMembers))
                 }
@@ -170,6 +162,7 @@ extension FormGroupViewModel: MCSessionDelegate {
         switch state {
         case .connecting:
             print("\(peerID) state: connecting")
+            self.advertise(peer: peerID)
         
         case .connected:
             print("\(peerID) state: connected")
@@ -181,6 +174,7 @@ extension FormGroupViewModel: MCSessionDelegate {
         
         @unknown default:
             print("\(peerID) state: unknown")
+            self.advertise(peer: peerID)
         }
     }
     
@@ -194,12 +188,13 @@ extension FormGroupViewModel: MCSessionDelegate {
                     print("Received data: \(decodedData.roomName)")
                     var exist = false
                     for index in self.availableRooms.indices {
-                        if self.availableRooms[index].roomOwner == decodedData.roomOwner {
+                        if self.availableRooms[index].roomOwner.displayName == decodedData.roomOwner.displayName {
                             self.availableRooms[index] = decodedData
                             exist = true
                         }
                     }
-                    if !exist {
+                    if (!exist) {
+                        print("não existe, adicionadno")
                         self.availableRooms.append(decodedData)
                     }
                     print("funcionou.")
@@ -251,7 +246,7 @@ extension FormGroupViewModel: MCNearbyServiceBrowserDelegate {
         print("ServiceBrowser found peer: \(peerID)")
         // Add the peer to the list of available peers
         DispatchQueue.main.async {
-            self.nearbyServiceBrowser.invitePeer(peerID, to: self.session, withContext: nil, timeout: 30)
+            self.nearbyServiceBrowser.invitePeer(peerID, to: self.session, withContext: nil, timeout: 3)
             self.availablePeers.append(peerID)
         }
     }

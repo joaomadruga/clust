@@ -9,7 +9,7 @@ import SwiftUI
 import MultipeerConnectivity
 
 class CreateRoomViewModel: NSObject, ObservableObject {
-    let formGroupViewModel: FormGroupViewModel
+    @ObservedObject var formGroupViewModel: FormGroupViewModel
     
     init(formGroupViewModel: FormGroupViewModel) {
         self.formGroupViewModel = formGroupViewModel

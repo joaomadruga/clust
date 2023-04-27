@@ -7,21 +7,27 @@
 
 import SwiftUI
 
-struct SeeAllPeopleView: View {
+struct ListOfMembersView: View {
     let globalStyle: GlobalStyle
+    let currentGroup: GroupModel
+    
     var body: some View {
-        NavigationView {
+        ScrollView {
             VStack {
+                BackButtonView(text: "Voltar")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.bottom, 10)
                 HeaderTitleView(text: "Integrantes")
-                ListOfPeopleView(globalStyle: globalStyle, username: "Madu", description: "Dua Lipa e Taylor Swift")
+                ForEach(currentGroup.members, id: \.self.hashValue) { member in
+                    ListOfPeopleView(globalStyle: globalStyle, username: member.name, description: "Quer focar em \(member.learningArea) e tem interesse em explorar \(member.listOfPreferredTopics[0]), \(member.listOfPreferredTopics[1]) e \(member.listOfPreferredTopics[2]).", memoji: member.memoji)
+                }
             }
         }
     }
 }
 
-struct SeeAllPeopleView_Previews: PreviewProvider {
+struct ListOfMembersView_Previews: PreviewProvider {
     static var previews: some View {
-        SeeAllPeopleView(globalStyle: .init())
-            .allScreensStyle()
+        ListOfMembersView(globalStyle: .init(), currentGroup: .init(members: .init())).allScreensStyle()
     }
 }
