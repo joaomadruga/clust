@@ -15,7 +15,6 @@ struct BackButtonView: View {
     var body: some View {
         Button(action: { presentationMode.wrappedValue.dismiss()}) {
             HStack {
-                
                 Image(systemName: "chevron.left")
                     .foregroundColor(foregroundColor)
                     .aspectRatio(contentMode: .fit)

@@ -23,8 +23,6 @@ struct SelectionTopicView: View {
                 }, label: {
                     LightGreenButtonView(globalStyle: globalStyle, text: "Escolher")
                 })
-                
-
             }
             Divider()
         }

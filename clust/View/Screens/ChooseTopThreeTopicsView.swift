@@ -6,14 +6,17 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ChooseTopThreeTopicsView: View {
-    @ObservedObject var viewModel: ChooseTopThreeTopicsViewModel
+    @StateObject var viewModel: ChooseTopThreeTopicsViewModel
+    @ObservedObject var formGroupViewModel: FormGroupViewModel
     let globalStyle: GlobalStyle
     
-    init(globalStyle: GlobalStyle, quizUserModel: QuizUserModel) {
+    init(globalStyle: GlobalStyle, quizUserModel: QuizUserModel, formGroupViewModel: FormGroupViewModel, currentRoom: RoomModel) {
         self.globalStyle = globalStyle
-        self.viewModel = .init(quizUserModel: quizUserModel)
+        self.formGroupViewModel = formGroupViewModel
+        _viewModel = StateObject(wrappedValue: ChooseTopThreeTopicsViewModel(quizUserModel: quizUserModel, formGroupViewModel: formGroupViewModel, currentRoom: currentRoom))
     }
     
     let columns = [
@@ -36,13 +39,17 @@ struct ChooseTopThreeTopicsView: View {
                     }
                 }
             }
-            MainButtonView(globalStyle: globalStyle, destinationScreen: LoadingScreenView(globalStyle: globalStyle, text: "Tá bom de lero lero! As equipes já estão sendo formadas. 🏃", destinationScreen: ChooseTopThreeTopicsView(globalStyle: globalStyle, quizUserModel: viewModel.quizUserModel)), backButtonText: "Sair", buttonAction: { viewModel.onClickButton() }, buttonText: "Finalizar")
+            MainButtonView(globalStyle: globalStyle, destinationScreen: LoadingScreenView(globalStyle: globalStyle, text: "Tá bom de lero lero! As equipes já estão sendo formadas. 🏃", destinationScreen: FormedGroupView(globalStyle: globalStyle, formGroupViewModel: formGroupViewModel, currentRoom: formGroupViewModel.availableRooms.first(where: { $0.roomOwner == viewModel.currentRoom.roomOwner }) ?? RoomModel(roomName: "Default", roomOwner: viewModel.currentRoom.roomOwner, defineArea: false, roomOwnerName: "")), formGroupViewModel: formGroupViewModel, currentRoom: viewModel.currentRoom, prevScreen: "ChooseTopThreeTopicsView"), backButtonText: "Sair", buttonAction: { viewModel.onClickButton() }, buttonText: "Finalizar")
+        }
+        .onAppear() {
+            // this works properly
+            viewModel.loadListOfSelections()
         }
     }
 }
 
 struct ChooseTopThreeTopicsView_Previews: PreviewProvider {
     static var previews: some View {
-        ChooseTopThreeTopicsView(globalStyle: .init(), quizUserModel: .init()).allScreensStyle()
+        ChooseTopThreeTopicsView(globalStyle: .init(), quizUserModel: .init(peerID: .init()), formGroupViewModel: .init(), currentRoom: .init(roomOwner: .init(), defineArea: .init(), roomOwnerName: .init())).allScreensStyle()
     }
 }

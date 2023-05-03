@@ -10,20 +10,21 @@ import AuthenticationServices
 
 struct StartScreenView: View {
     let globalStyle: GlobalStyle
+    let loginModel: LoginModel
     
     var body: some View {
-            VStack {
-                Spacer()
-                Image("GroupClust")
-                Spacer()
-                
-                MainButtonView(globalStyle: globalStyle, destinationScreen: CreateProfileView(globalStyle: globalStyle), backButtonText: "Voltar", buttonAction: {}, buttonText: "Criar conta")
-        }
+        VStack {
+            Spacer()
+            Image("GroupClust")
+            Spacer()
+            
+            MainButtonView(globalStyle: globalStyle, destinationScreen: ProfileSelectorView(loginModel: loginModel, globalStyle: globalStyle), backButtonText: "Voltar", buttonAction: {}, buttonText: "Criar conta")
+        }.navigationBarBackButtonHidden(true)
     }
 }
 
 struct StartScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        StartScreenView(globalStyle: .init()).allScreensStyle()
+        StartScreenView(globalStyle: .init(), loginModel: .init()).allScreensStyle()
     }
 }

@@ -13,11 +13,14 @@ struct ListOfTopicsView: View {
     var viewModel: ListOfTopicsViewModel
     @State private var showAlert = false
     @State var showLoadingScreenView: Bool = false
+    @ObservedObject var formGroupViewModel: FormGroupViewModel
     
-    init(searchText: Binding<String>, globalStyle: GlobalStyle, QuizUserModel: QuizUserModel) {
+    
+    init(searchText: Binding<String>, globalStyle: GlobalStyle, QuizUserModel: QuizUserModel, currentRoom: RoomModel, formGroupViewModel: FormGroupViewModel) {
         self.globalStyle = globalStyle
         self.searchText = searchText
-        self.viewModel = ListOfTopicsViewModel(searchText: self.searchText, quizUserModel: QuizUserModel)
+        self.formGroupViewModel = formGroupViewModel
+        self.viewModel = ListOfTopicsViewModel(searchText: self.searchText, quizUserModel: QuizUserModel, currentRoom: currentRoom, formGroupViewModel: formGroupViewModel)
     }
     
     var body: some View {
@@ -61,20 +64,19 @@ struct ListOfTopicsView: View {
                                     .padding(.top, 16)
                             }
                         }
-                    
                 }
                 .listStyle(PlainListStyle())
             }
             .padding([.leading, .trailing], 20)
         }
         .navigationDestination(isPresented: $showLoadingScreenView) {
-            LoadingScreenView(globalStyle: globalStyle, text: "Por favor, aguarde todos resolverem suas crises existenciais enquanto pensam no tema. 🫂💭", destinationScreen: ChooseTopThreeTopicsView(globalStyle: globalStyle, quizUserModel: viewModel.quizUserModel)).allScreensStyle()
+            LoadingScreenView(globalStyle: globalStyle, text: "Por favor, aguarde todos resolverem suas crises existenciais enquanto pensam no tema. 🫂💭", destinationScreen: ChooseTopThreeTopicsView(globalStyle: globalStyle, quizUserModel: viewModel.quizUserModel, formGroupViewModel: formGroupViewModel, currentRoom: viewModel.currentRoom), formGroupViewModel: formGroupViewModel, currentRoom: viewModel.currentRoom, prevScreen: "ChooseTopicView").allScreensStyle()
         }
     }
 }
 
 struct ListOfTopicsView_Previews: PreviewProvider {
     static var previews: some View {
-        ListOfTopicsView(searchText: .constant(""), globalStyle: .init(), QuizUserModel: .init())
+        ListOfTopicsView(searchText: .constant(""), globalStyle: .init(), QuizUserModel: .init(peerID: .init()), currentRoom: .init(roomOwner: .init(), defineArea: .init(), roomOwnerName: .init()), formGroupViewModel: .init())
     }
 }

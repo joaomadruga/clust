@@ -45,6 +45,6 @@ struct MainButtonView: View {
 struct MainButtonView_Previews: PreviewProvider {
     
     static var previews: some View {
-        MainButtonView(globalStyle: .init(), destinationScreen: QuizMembersNumberView(globalStyle: .init()), backButtonText: "Voltar", buttonAction: { print("hello world") }).allScreensStyle()
+        MainButtonView(globalStyle: .init(), destinationScreen: QuizMembersNumberView(globalStyle: .init(), quizUserModel: .init(peerID: .init()), currentRoom: .init(roomOwner: .init(), defineArea: .init(), roomOwnerName: .init()), formGroupViewModel: .init()), backButtonText: "Voltar", buttonAction: { print("hello world") }).allScreensStyle()
     }
 }

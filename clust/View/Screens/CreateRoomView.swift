@@ -6,68 +6,72 @@
 //
 
 import SwiftUI
+import MultipeerConnectivity
 
-struct CreateChallengeView: View {
+struct CreateRoomView: View {
     let globalStyle: GlobalStyle
-    @State private var username: String = ""
-    @State private var isToggle : Bool = false
-
-    func teste(){
-        print("hello world")
+    let roomOwnerName: String
+    
+    @State private var challenge: String
+    @State private var defineArea: Bool
+    @State var viewModel: CreateRoomViewModel
+    
+    init(globalStyle: GlobalStyle, formGroupViewModel: FormGroupViewModel, roomOwnerName: String) {
+        self.globalStyle = globalStyle
+        self.challenge = ""
+        self.defineArea = false
+        self.roomOwnerName = roomOwnerName
+        self.viewModel = .init(formGroupViewModel: formGroupViewModel)
     }
+    
     var body: some View {
-        NavigationView {
             VStack {
                 HeaderTitleView(text: "Criar nova sala de formação de equipes")
                 Text("Ao iniciar uma sala de formação de equipes, todos os participantes que estão na mesma rede Wi-Fi poderão ingressar.")
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.system(size: 22))
+                    .font(.body)
                     .foregroundColor(globalStyle.systemGrey3)
                     .padding(EdgeInsets(top: -16, leading: 0, bottom: 16, trailing: 0))
-                TextField(
-                    "Nome da Challenge",
-                    text: $username
-                )
-                .padding(14)
-                .font(.system(size: 22))
+                
+                TextField("Nome do Challenge", text: $challenge)
+                .padding(12)
                 .background(globalStyle.inputGrey)
-                .cornerRadius(10)
-                .onSubmit {
-                    print("hello world")
-                }
-                .textInputAutocapitalization(.never)
-                .disableAutocorrection(true)
-                .keyboardType(.numberPad)
+                .cornerRadius(12)
 
                 Text("Ex: Challenge Paris")
                     .padding(.leading)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .foregroundColor(globalStyle.systemGrey2)
-                    .padding(.bottom, 18)
-                    .font(.system(size: 18))
-                Toggle(isOn: $isToggle) {
+                    .font(.caption)
+                    .padding(.bottom, 16)
+                
+                Toggle(isOn: $defineArea) {
                     Text("Os estudantes precisam definir sua área de atuação?")
                 }
-                .padding(16)
+                .padding(12)
                 .background(globalStyle.inputGrey)
                 .foregroundColor(globalStyle.systemGrey1)
-                .cornerRadius(10)
-                .font(.system(size: 22))
+                .cornerRadius(12)
 
                 Text("Caso não seja necessário, os estudantes não serão categorizados entre desenvolvimento, design e inovação.")
                     .padding(.leading)
+                    .font(.caption)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .foregroundColor(globalStyle.systemGrey2)
-                    .padding(.bottom, 18)
+                
                 Spacer()
-
-                MainButtonView(globalStyle: globalStyle, destinationScreen: StartScreenView(globalStyle: globalStyle), backButtonText: "", buttonAction: teste)
+                
+                MainButtonView(globalStyle: globalStyle, destinationScreen: MentorWaitRoomView(globalStyle: globalStyle, createRoomViewModel: viewModel), backButtonText: "", buttonAction: {
+                    viewModel.advertiseCreateRoom(roomName: challenge, defineArea: defineArea, roomOwnerName: roomOwnerName)
+                })
+                
+                
             }
-        }
+        
     }
 }
-struct CreateChallengeView_Previews: PreviewProvider {
+struct CreateRoomView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateChallengeView(globalStyle: .init()).allScreensStyle()
+        CreateRoomView(globalStyle: .init(), formGroupViewModel: .init(), roomOwnerName: "Kiev").allScreensStyle()
     }
 }

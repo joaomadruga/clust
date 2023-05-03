@@ -14,7 +14,6 @@ struct MemojiInputView: UIViewControllerRepresentable {
     func updateUIViewController(_ viewController: MemojiInputViewController, context: Context) {
         // Send the input text to the input field
         viewController.textView.text = memojiText
-        
     }
 
     func makeCoordinator() -> Coordinator {

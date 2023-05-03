@@ -10,13 +10,35 @@ import SwiftUI
 
 extension CreateProfileView {
     class CreateProfileViewModel: ObservableObject {
-        @ObservedObject var LoginModel:LoginModel = .init()
+        @ObservedObject var loginModel:LoginModel
         
-        func onClickButton(name: String, email: String, profileImage: String?, profileImageBackground: CurrentCheckedColorModel) {
-            self.LoginModel.name = name
-            self.LoginModel.email = email
-            self.LoginModel.profileImage = profileImage
-            self.LoginModel.profileImageBackground = profileImageBackground
+        init(LoginModel: LoginModel) {
+            self.loginModel = LoginModel
+        }
+        
+        func onClickButton(name: String, email: String, profileImage: String?, profileImageBackgroundIndex: Int) {
+            print(profileImage)
+            self.loginModel.name = name
+            self.loginModel.email = email
+            self.loginModel.profileImage = profileImage!
+            self.loginModel.profileImageBackgroundIndex = profileImageBackgroundIndex
+            self.loginModel.isLogged = true
+            save()
+        }
+        
+        private func fileURL() throws -> URL {
+            try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+                .appendingPathComponent("loginModel.data")
+        }
+        
+        func save() {
+            do {
+                let data = try JSONEncoder().encode(loginModel)
+                let outfile = try fileURL()
+                try data.write(to: outfile)
+            } catch {
+                print(error)
+            }
         }
     }
 }
