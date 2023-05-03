@@ -17,6 +17,7 @@ extension CreateProfileView {
         }
         
         func onClickButton(name: String, email: String, profileImage: String?, profileImageBackgroundIndex: Int) {
+            print(profileImage)
             self.loginModel.name = name
             self.loginModel.email = email
             self.loginModel.profileImage = profileImage!

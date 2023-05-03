@@ -40,7 +40,7 @@ struct FormGroupView: View {
             if selected == 0 {
                 if viewModel.availableRooms.filter({ return $0.isRoomOpen }).count > 0 {
                     ScrollView() {
-                        ForEach(viewModel.availableRooms, id: \.self.hashValue) { room in
+                        ForEach(viewModel.availableRooms.filter({ return $0.isRoomOpen }), id: \.self.hashValue) { room in
                             ActiveRoomCardView(globalStyle: globalStyle, room: room, userMemoji: loginModel.profileImage, userName: loginModel.name)
                                 .environmentObject(viewModel)
                                 .padding(.bottom, 16)
@@ -58,11 +58,21 @@ struct FormGroupView: View {
                     Spacer()
                 }
             } else {
-                Text("Você ainda não participou de nenhuma sala de formação de equipe.")
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(globalStyle.systemGrey2)
-                    .padding(.top, 8)
-                Spacer()
+                if viewModel.availableRooms.filter({ return !($0.isRoomOpen) }).count > 0 {
+                    ScrollView() {
+                        ForEach(viewModel.availableRooms.filter({ return !($0.isRoomOpen) }), id: \.self.hashValue) { room in
+                            InactiveRoomCardView(globalStyle: globalStyle, formGroupViewModel: viewModel, currentRoom: room)
+                        }
+                    }
+                } else {
+                    VStack {
+                        Text("Você ainda não participou de nenhuma sala de formação de equipe.")
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(globalStyle.systemGrey2)
+                            .padding(.top, 8)
+                        Spacer()
+                    }
+                }
                 }
             }
         .navigationBarBackButtonHidden(true)

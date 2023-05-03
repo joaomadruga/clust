@@ -6,13 +6,32 @@
 //
 
 import SwiftUI
+import CoreImage.CIFilterBuiltins
 
 struct FormedGroupView: View {
     let globalStyle: GlobalStyle
     @ObservedObject var formGroupViewModel: FormGroupViewModel
     var currentRoom: RoomModel
     @State private var showingSheet = true
+    @State private var showingAlert = false
     @ObservedObject var splashScreenViewModel: SplashScreenViewModel = .init()
+    
+    
+    @State private var link = ""
+    let context = CIContext()
+    let filter = CIFilter.qrCodeGenerator()
+    
+    func generateQRCode(from string: String) -> UIImage {
+        filter.message = Data(string.utf8)
+
+        if let outputImage = filter.outputImage {
+            if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
+                return UIImage(cgImage: cgimg)
+            }
+        }
+
+        return UIImage(systemName: "qrcode") ?? UIImage()
+    }
     
     var body: some View {
         ScrollView {
@@ -102,9 +121,11 @@ struct FormedGroupView: View {
                     
                     Text(currentRoom.roomName).frame(maxWidth: .infinity, alignment: .leading).textCase(.uppercase)
                     
-                    Image(systemName: "qrcode")
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .font(.system(size: 90))
+                    Image(uiImage: generateQRCode(from: link))
+                        .interpolation(.none)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200, height: 200)
                         .padding(.top, 16)
                         .padding(.bottom, 20)
                 }
@@ -118,7 +139,9 @@ struct FormedGroupView: View {
                 .cornerRadius(16)
                 
                 
-                Button(action: {}) {
+                Button(action: {
+                    showingAlert.toggle()
+                }) {
                     HStack {
                         Text("Adicionar link para o artefato final")
                             .foregroundColor(.black)
@@ -131,6 +154,13 @@ struct FormedGroupView: View {
                     .cornerRadius(16)
                     
                 }
+                .alert("Artefato final", isPresented: $showingAlert) {
+                    TextField("link para o artefato", text: $link)
+                    Button("OK", action: {})
+                } message: {
+                    Text("Insira abaixo o link para seu artefato final do Challenge.")
+                }
+                
                 Text("Adicionando um link o seu artefato final poderá ser facilmente acessado através do colecionável da equipe na Wallet")
                     .foregroundColor(globalStyle.systemGrey2)
                 
