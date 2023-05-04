@@ -1,10 +1,10 @@
 # Clust
 
-![App Screenshot](https://drive.google.com/file/d/17ByfN4hV5H3Q_L0ie8H1TqXdYHpm4EoZ/view?usp=sharing)
+![App Screenshot](https://imgur.com/a/nIZjirO)
 
 ## 📕 Sobre
 
-Desenvolvido no Foundations da Apple Developer Academy da UFPE (https://www.developeracademy.cin.ufpe.br/foundations). Clust é um app que promove equipes alinhadas com as expectativas de aprendizagem cada estudante da Academy.
+Desenvolvido no Foundations da [Apple Developer Academy da UFPE](https://www.developeracademy.cin.ufpe.br/foundations), clust é um app que promove equipes alinhadas com as expectativas de aprendizagem cada estudante da Academy.
 
 ## 🛠 Tecnologias
 
