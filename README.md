@@ -1,6 +1,6 @@
 # Clust
 
-![App Screenshot](https://imgur.com/a/nIZjirO)
+![App Screenshot](https://i.imgur.com/3ADbTv0.png)
 
 ## 📕 Sobre
 
